@@ -1,0 +1,131 @@
+/* HEADER-INDEX */
+.header {
+    height:77px;
+    width:100%;
+    cursor: pointer;
+    border-bottom: 2px solid var(--lightgrey-color);
+}
+
+.menu {
+    margin-top:80px;
+}
+
+.header__navbar {
+    position: relative;
+    top:0%;
+}
+
+.header__navbar-list {
+    list-style:none;
+}
+
+.header__navbar-img {
+    width:60px;
+    height: 60px;
+}
+
+
+
+.theloai__li {
+    padding:20px 30px 20px 30px; 
+    border-right:1px solid lightgrey;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.theloai__li:hover {
+    padding:20px 30px 20px 30px; 
+    border-right:none;
+    background-color: black;
+    color: white;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.theloai__li:active {
+    padding:20px 30px 20px 30px; 
+    border-right:none;
+    background-color: black;
+    color: white;
+}
+
+.chitiettl__a {
+    text-decoration:none; 
+    color: grey;
+    font-size:15px;
+    font-family:arial;
+    font-weight:bold;
+    margin-left:17px;
+    margin-right:17px;
+}
+
+.chitiettl__a:hover {
+    color: black;
+    text-decoration:none; 
+    font-size:15px;
+    font-family:arial;
+    font-weight:bold;
+}
+
+.chitiettl__a:active .chitiettl__a {
+    color: black;
+    text-decoration:none; 
+    font-size:15px;
+    font-family:arial;
+    font-weight:bold;
+}
+
+.chitiettl__line:hover {
+    animation: dowToup .5s ease forwards;
+}
+
+@keyframes downToup {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.sanpham__a:hover .sanpham__content-main{
+    font-size:18px;
+    font-weight: bold;
+    color:blue;
+    transition: color .3s ease;
+}
+
+.sanpham__img {
+    width:300px;
+    height:200px;
+    transform: scale(1);
+    transition: transform .3s ease;
+}
+
+.sanpham__img:hover {
+    transform: scale(1.1);
+    transition: transform .3s ease;
+}
+
+.sanpham__content-main {
+    font-size:18px;
+    font-weight: bold;
+    color: black;
+    transition: color .3s ease;
+}
+
+.sanpham__content {
+    font-size: 15px;
+    color:black;
+    margin-top:10px;
+}
+
+.sanpham__button {
+    background-color:white;
+    color:black;
+}
+
+.sanpham__button:hover {
+    background-color: blue;
+    color: white;
+}
