@@ -28,11 +28,6 @@
                         include("src_php/menungang.php");
                         ?>
                     </li>
-                    <li class="header__navbar-item">
-                        <?php
-                        include("src_php/timkiem.php");
-                        ?>
-                    </li>
                 </ul>
 </div>
 </div>
@@ -53,11 +48,75 @@
                 break;
                 case 4: include('src_php/datxe.php');
                 break;
+                case 5: include('src_php/dangki.php');
+                break;
+                case 6: include('src_php/dangnhap.php');
+                break;
+                case 7: include('src_php/timkiem.php');
+                break;
                 }
             }
             ?>
             </div>
         </header>
+        <section class="section" style="height:500px">
+
+        </section>
+        <footer class="footer">
+            <div class="footer__content">
+                <table style="width:100%">
+                    <tr>
+                        <td class="footer__td" style="margin-left:50px">LIÊN HỆ VỚI CHÚNG TÔI</td>
+                        <td class="footer__td" style="margin-left:50px">TÌM HIỂU THÊM VỀ BMW</td>
+                    </tr>
+                    <tr>
+                        <td class="footer__td" style="margin-left:50px">Liên hệ tư vấn BMW</td>
+                        <td class="footer__td" style="margin-left:50px">BMW Asia</td>
+                    </tr>
+                    <tr>
+                        <td class="footer__td" style="margin-left:50px">Showroom BMW</td>
+                        <td class="footer__td" style="margin-left:50px">BMW PresClub Asia</td>
+                    </tr>
+                    <tr>
+                        <td class="footer__td" style="margin-left:50px">Tìm hiểu về BMW App</td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <a href="#"><i class="fab fa-facebook-f">
+                                    <?php echo '<img src="image/Facebook-color.png" style="width:30px;height:30px">' ?>
+                                </i></a>
+                                <a href="#"><i class="fab fa-instagram">
+                                    <?php echo '<img src="image/Instagram-color.png" style="width:30px;height:30px">' ?>
+                                </i></a>
+                                <a href="#"><i class="fab fa-youtube">
+                                    <?php echo '<img src="image/Youtube-color.png" style="width:30px;height:30px">' ?>
+                                </i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table style="width:100%">
+                    <tr>
+                        <td style="text-align:center">
+                            Từ chối trách nhiệm pháp lí
+                        </td>
+                        <td style="text-align:center">
+                            Chính sách bảo mật
+                        </td>
+                        <td style="text-align:center">
+                            Chính sách cookie
+                        </td>
+                        <td style="text-align:center">
+                            Thông tin pháp lí
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </footer>
     </div>
         
 </body>
