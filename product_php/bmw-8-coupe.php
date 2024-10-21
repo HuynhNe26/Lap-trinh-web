@@ -67,13 +67,12 @@
 </style>
 </head>
 <body>
-
-<div class="container">
-<div class="image-section">
-    <img src="../image/BMW-8.webp" alt="BMW-8">
-</div>
-<div class="info-section">
-    <h1 style="color:#0056b3">BMW-8</h1>
+    <div class="container">
+        <div class="image-section">
+        <img src="../image/BMW-8.webp" alt="BMW-8">
+        </div>
+    <div class="info-section">
+        <h1 style="color:#0056b3">BMW-8</h1>
     <div class="price" style="font-weight: 600">Giá từ: ...&nbsp;VNĐ</div>
     <p style="font-weight:500; color:navy">[BMW - 8] Công nghệ hiện đại, tiết kiệm chi phí vượt trội!</p>
     <p>BMW - 8 không chỉ đẹp ấn tượng mà còn đầy tiện nghi, hiện đại, giúp bạn trải nghiệm sự thoải mái và an toàn.</p>
@@ -83,7 +82,7 @@
     <a href="#" class="button">Đặt ngay</a>
     <a href="#" class="button">Đăng ký lái thử</a>
     <p>HOTLINE TƯ VẤN: <strong>010101010</strong></p>
-</div>
-</div>
+    </div>
+    </div>
 </body>
 </html>
