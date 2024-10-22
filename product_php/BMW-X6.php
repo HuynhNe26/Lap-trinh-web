@@ -10,7 +10,7 @@
     <title>BMW X6 | BMW Việt Nam</title>
   </head>
   <body>
-    <?php include("./menungang.php") ?>
+   
     <div id="header">
       <div id="gioithieu">
         <h2>THE X6</h2>
