@@ -11,7 +11,7 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: hiddenhidden;
 }
 
 img {
