@@ -1,0 +1,406 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#header {
+  background-image: url(../image/anhtiuedex7.webp);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover; /* Hình ảnh phủ kín header mà không bị méo */
+  height: 100vh; /* Chiều cao của header bằng 100% chiều cao màn hình */
+  margin-top: 70px; /* Cách phần trên của màn hình 70px */
+}
+#header h2 {
+  margin-top: 60px;
+  margin-left: 30px;
+  color: white;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#header h3 {
+  margin-left: 34px;
+  margin-bottom: 150px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+#gioithieu {
+  padding-top: 100px;
+  padding-left: 40px;
+  font-size: 20px;
+}
+#header #tuvan {
+  font-size: 20px;
+  padding: 10px 70px 10px;
+  background-color: rgb(0, 140, 255);
+  color: white;
+  margin-left: 52px;
+  text-decoration: none;
+  width: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 2s;
+}
+#header #tuvan {
+  font-size: 20px;
+  padding: 10px 70px 10px;
+  background-color: rgb(0, 140, 255);
+  color: white;
+  margin-left: 52px;
+  text-decoration: none;
+  width: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 2s;
+}
+#header #tuvan:hover {
+  background-color: blue;
+}
+#header table {
+  font-size: 18px;
+  margin-top: 300px;
+  color: white;
+  margin-left: 82px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 80px;
+}
+#header td {
+  padding-right: 100px;
+}
+.decoration {
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: -25px;
+}
+#thietke {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.784);
+  padding-left: 50px;
+  padding-right: 80px;
+}
+#thietke:hover {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  transition: linear;
+}
+#thietke:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: blue;
+  z-index: 1;
+}
+#tskt {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.74);
+  padding-right: 80px;
+}
+#tskt:hover {
+  color: black;
+  font-weight: bold;
+}
+.gt {
+  margin-left: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
+#chitiet {
+  padding: 10px 40px 10px;
+  background-color: rgb(0, 94, 255);
+  margin-right: 70px;
+  color: white;
+  text-decoration: none;
+  float: right;
+  margin-top: -30px;
+}
+#chitiet:hover {
+  background-color: blue;
+}
+#phutung {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.74);
+  padding-right: 80px;
+}
+#phutung:hover {
+  color: black;
+  font-weight: bold;
+}
+#taichinh {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.74);
+  padding-right: 50px;
+}
+#taichinh:hover {
+  color: black;
+  font-weight: bold;
+}
+.thietkenoibat {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: 300;
+  margin-left: 30px;
+  margin-top: 300px;
+}
+.text h1 {
+  font-size: 30px;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#ngoaithat {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  box-sizing: border-box;
+  padding-right: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.mota {
+  width: 30%;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.text h1 {
+  font-size: 30px;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.text p {
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 200;
+  text-align: justify;
+}
+.motaa {
+  width: 45%;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-right: 30px;
+}
+.noithat {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.hinhmau {
+  display: flex;
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  flex-direction: column; /* Đặt các phần tử trong khối theo chiều dọc */
+  height: 100vh; /* Chiều cao khối bao phủ toàn bộ màn hình */
+  text-align: center; /* Căn giữa văn bản */
+  margin-top: -150px;
+}
+
+.hinhphu {
+  width: auto;
+  text-align: center;
+}
+
+.hinhphu img {
+  max-width: 100%; /* Hình ảnh chiếm tối đa chiều rộng nhưng không vượt quá khung chứa */
+  height: auto; /* Giữ tỉ lệ hình ảnh */
+  margin: 0 auto; /* Căn giữa hình ảnh */
+  display: block;
+}
+
+.hinhphu h1,
+.hinhphu p {
+  max-width: 100%; /* Đặt chiều rộng văn bản bằng với hình ảnh */
+  margin: 10px auto; /* Căn giữa văn bản và tạo khoảng cách */
+  padding: 0 20px; /* Thêm padding để không dính sát lề */
+  box-sizing: border-box; /* Đảm bảo padding được tính vào chiều rộng tổng */
+}
+
+.hinhphu h1 {
+  font-size: 30px;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hinhphu p {
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 200;
+  text-align: justify;
+}
+#congnghe {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  box-sizing: border-box;
+  padding-right: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.noibat {
+  width: 30%;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.noibat p {
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 200;
+  text-align: justify;
+}
+.khampha {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: 300;
+  margin-left: 30px;
+  margin-top: 300px;
+}
+.discover {
+  margin-top: -300px;
+}
+.congnghetantien {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: 300;
+  margin-left: 30px;
+  margin-top: 300px;
+}
+.noibat h1 {
+  font-size: 30px;
+  font-weight: 200;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.congnghecao {
+  margin-top: -200px;
+}
+.tienich {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: 300;
+  margin-left: 30px;
+  margin-top: 300px;
+}
+.suitable {
+  margin-top: -200px;
+}
+#tsktx7 h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: 300;
+  margin-left: 30px;
+  margin-top: 100px;
+  font-size: 40px;
+}
+#tsktx7 h5 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: 300;
+  margin-left: 30px;
+  font-size: 27px;
+  margin-top: -10px;
+}
+.bangkithuatx7 {
+  float: right;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  margin-right: 0px;
+  border-collapse: collapse; /* Để các đường viền không bị giãn */
+  display: table-cell;
+  margin-top: -400px;
+}
+
+.chuthichx7 {
+  font-weight: bold;
+  text-align: center;
+}
+.bangkithuatx7 td {
+  padding-top: 25px;
+  vertical-align: middle;
+}
+.bangkithuatx7 tr {
+  border-bottom: 1px solid black;
+  border-width: thin;
+}
+.docthem a {
+  text-decoration: none;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: greenyellow;
+  font-size: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 50px;
+  color: black;
+}
+.docthem {
+  margin-top: 50px;
+  margin-left: 700px;
+}
+.docthem a:hover {
+  background-color: green;
+  font-weight: bold;
+}
+#tc {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  margin-left: 20px;
+}
+#tc h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: 300;
+  margin-top: 100px;
+}
+.showroom a {
+  text-decoration: none;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(0, 157, 255);
+  font-size: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  color: black;
+  margin-left: 40px;
+}
+.showroom {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.showroom a:hover {
+  background-color: blue;
+  font-weight: bold;
+}
+#tieuhaonhienlieu {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#tieuhaonhienlieu p {
+  font-size: 20px;
+  font-weight: 200;
+}
+#tieuhaonhienlieu h1 {
+  font-weight: 200;
+  font-size: 40px;
+  font-weight: bold;
+}
+#tieuhaonhienlieu h5 {
+  font-size: 25px;
+  margin-top: -10px;
+}
+#tieuhaonhienlieu ul {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+}
