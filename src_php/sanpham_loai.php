@@ -16,12 +16,12 @@
     if ($result_masanpham->num_rows > 0) {
         while ($row = $result_masanpham->fetch_assoc()) {
     ?>
-        <div style="background-image: url('image/<?php echo $row['background'] ?>');height: 850px;">
+        <div style="background-image: url('image/background/<?php echo $row['background'] ?>');height: 850px;">
             <div style="padding-top: 250px;padding-left: 100px;">
                 <h1 style="color: white;font-size: 50px;">THE <?php echo $row['tenchitiettl']?> </h1>
                 <h2 style="color: white;font-size: 30px;"><?php echo $row['tensp']; ?></h2>
-                <button href style="background-color: aqua;width: 250px;height: 50px;">đăng ký lái thử</button><br><br>
-                <button style="background-color: gray;width: 250px;height: 50px;">tư vấn chi tiết</button>
+                <button href="index.php?pid=2" style="background-color: aqua;width: 250px;height: 50px;">đăng ký lái thử</button><br><br>
+                <button href="index.php?pid=3" style="background-color: gray;width: 250px;height: 50px;">tư vấn chi tiết</button>
             </div>
             <div style="padding-top: 150px;padding-left: 100px;">
                 <div style="width: 180px;float: left;color:white">
