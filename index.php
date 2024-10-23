@@ -54,6 +54,8 @@
                 break;
                 case 7: include('src_php/timkiem.php');
                 break;
+                case 8:  include('src_php/sanpham_loai.php');
+                break;
                 }
             }
             ?>
