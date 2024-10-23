@@ -21,12 +21,12 @@ img {
 }
 
 #headerx7 {
-  background-image: url(../image/anhtiuedex7.webp);
+  background-image: url(./image-BMWX7/anhtiuedex7.webp);
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: cover; /* Hình ảnh phủ kín header mà không bị méo */
-  height: 100vh; /* Chiều cao của header bằng 100% chiều cao màn hình */
-  margin-top: 70px; /* Cách phần trên của màn hình 70px */
+  background-size: cover; 
+  height: 100vh; 
+  margin-top: 70px; 
 }
 #headerx7 h2 {
   margin-top: 60px;
@@ -203,11 +203,11 @@ img {
 
 .hinhmaux7 {
   display: flex;
-  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
-  align-items: center; /* Căn giữa nội dung theo chiều dọc */
-  flex-direction: column; /* Đặt các phần tử trong khối theo chiều dọc */
-  height: 100vh; /* Chiều cao khối bao phủ toàn bộ màn hình */
-  text-align: center; /* Căn giữa văn bản */
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  height: 100vh; 
+  text-align: center; 
   margin-top: -150px;
 }
 
@@ -217,18 +217,18 @@ img {
 }
 
 .hinhphux7 img {
-  max-width: 100%; /* Hình ảnh chiếm tối đa chiều rộng nhưng không vượt quá khung chứa */
-  height: auto; /* Giữ tỉ lệ hình ảnh */
-  margin: 0 auto; /* Căn giữa hình ảnh */
+  max-width: 100%; 
+  height: auto; 
+  margin: 0 auto; 
   display: block;
 }
 
 .hinhphux7 h1,
 .hinhphu p {
-  max-width: 100%; /* Đặt chiều rộng văn bản bằng với hình ảnh */
-  margin: 10px auto; /* Căn giữa văn bản và tạo khoảng cách */
-  padding: 0 20px; /* Thêm padding để không dính sát lề */
-  box-sizing: border-box; /* Đảm bảo padding được tính vào chiều rộng tổng */
+  max-width: 100%; 
+  margin: 10px auto; 
+  padding: 0 20px;
+  box-sizing: border-box; 
 }
 
 .hinhphux7 h1 {
@@ -464,7 +464,7 @@ img {
         
         <div id="ngoaithatx7">
           <div class="motax7">
-            <img src="../image/dauxex7.webp" />
+            <img src="./image-BMWX7/dauxex7.webp" />
             <div class="textx7">
               <h1>Thiết kế đầu xe.</h1>
               <p>
@@ -473,7 +473,7 @@ img {
             </div>
           </div>
           <div class="motax7">
-            <img src="../image/thanxex7.webp" />
+            <img src="./image-BMWX7/thanxex7.webp" />
             <div class="textx7">
               <h1>Thiết kế thân xe.</h1>
               <p>
@@ -482,7 +482,7 @@ img {
             </div>
           </div>
           <div class="motax7">
-            <img src="../image/duoixex7.webp" />
+            <img src="./image-BMWX7/duoixex7.webp" />
             <div class="textx7">
               <h1>Thiết kế đuôi xe.</h1>
               <p>
@@ -494,7 +494,7 @@ img {
         <h2 style="font-size: 30px;" class="thietkenoibatx7">ĐIỂM NỔI BẬT TRONG THIẾT KẾ NỘI THẤT CỦA BMW X7.</h2>
         <div class="noithatx7">
           <div class="motaax7">
-            <img src="../image/noithatx7.webp" />
+            <img src="./image-BMWX7/noithatx7.webp" />
             <div class="textx7">
               <h1>Nội thất hiện đại và tân tiến</h1>
               <p>
@@ -503,7 +503,7 @@ img {
             </div>
           </div>
           <div class="motaax7">
-            <img src="../image/hangghesaux7.webp" />
+            <img src="./image-BMWX7/hangghesaux7.webp" />
             <div class="textx7">
               <h1>Các chi tiết nội thất ốp pha lê 'CraftedClarity'.</h1>
               <p>
@@ -517,7 +517,7 @@ img {
           </div>
           <div class="hinhmaux7">
             <div class="hinhphux7">
-              <img src="../image/phalex7.webp">
+              <img src="./image-BMWX7/phalex7.webp">
               <div class="textphux7">
                 <h1>Chi tiết nội thất điểm pha lê ‘CraftedClarity’.</h1>
                 <p>Nội thất của BMW X7 gây ấn tượng với việc sử dụng các vật liệu cao cấp đặc biệt. Các điểm nhấn sang trọng như bảng điều khiển iDrive ốp pha lê nhấn mạnh sự sang trọng và đẳng cấp cho New X7.</p>
@@ -531,7 +531,7 @@ img {
           
           <div id="congnghex7">
             <div class="noibatx7">
-              <img src="../image/cuasptroix7.webp" />
+              <img src="./image-BMWX7/cuasptroix7.webp" />
               <div class="textx7">
                 
                 <p>
@@ -540,7 +540,7 @@ img {
               </div>
             </div>
             <div class="noibatx7">
-              <img src="../image/travelx7.webp" />
+              <img src="./image-BMWX7/travelx7.webp" />
               <div class="textx7">
                 
                 <p>
@@ -549,7 +549,7 @@ img {
               </div>
             </div>
             <div class="noibatx7">
-              <img src="../image/cuasptroix7.webp" />
+              <img src="./image-BMWX7/cuasptroix7.webp" />
               <div class="textx7">
                
                 <p>
@@ -563,7 +563,7 @@ img {
             
             <div id="congnghex7">
               <div class="noibatx7">
-                <img src="../image/smartphonex7.webp" />
+                <img src="./image-BMWX7/smartphonex7.webp" />
                 <div class="textx7">
                   <h1>Tính năng kết nối điện thoại thông minh không dây</h1>
                   <p>
@@ -572,7 +572,7 @@ img {
                 </div>
               </div>
               <div class="noibatx7">
-                <img src="../image/accessx7.webp" />
+                <img src="./image-BMWX7/accessx7.webp" />
                 <div class="textx7">
                   <h1>Comfort Access.</h1>
                   <p>
@@ -581,7 +581,7 @@ img {
                 </div>
               </div>
               <div class="noibatx7">
-                <img src="../image/hedieuhanhx7.webp" />
+                <img src="./image-BMWX7/hedieuhanhx7.webp" />
                 <div class="textx7">
                   <h1>Hệ điều hành BMW Operating System 8.0.</h1>
                   <p>
@@ -595,7 +595,7 @@ img {
               
               <div id="congnghex7">
                 <div class="noibatx7">
-                  <img src="../image/7chox7.webp" />
+                  <img src="./image-BMWX7/7chox7.webp" />
                   <div class="textx7">
                     <h1>7 chỗ ngồi thoải mái cho mọi chuyến đi.</h1>
                     <p>
@@ -604,7 +604,7 @@ img {
                   </div>
                 </div>
                 <div class="noibatx7">
-                  <img src="../image/doxex7.webp" />
+                  <img src="./image-BMWX7/doxex7.webp" />
                   <div class="textx7">
                     <h1>Hỗ trợ đỗ xe Parking Assistant.</h1>
                     <p>
@@ -613,7 +613,7 @@ img {
                   </div>
                 </div>
                 <div class="noibatx7">
-                  <img src="../image/headupx7.webp" />
+                  <img src="./image-BMWX7/headupx7.webp" />
                   <div class="textx7">
                     <h1>BMW Head-Up Display.</h1>
                     <p>
@@ -624,7 +624,7 @@ img {
               </div>
               <div class="noithatx7">
                 <div class="motaax7">
-                  <img src="../image/noithatx7.webp" />
+                  <img src="./image-BMWX7/noithatx7.webp" />
                   <div class="textx7">
                     <h1>Cửa sổ trời Panorama Sky Lounge.</h1>
                     <p>
@@ -633,7 +633,7 @@ img {
                   </div>
                 </div>
                 <div class="motaax7">
-                  <img src="../image/hangghesaux7.webp" />
+                  <img src="./image-BMWX7/hangghesaux7.webp" />
                   <div class="textx7">
                     <h1>Hệ thống âm thanh Bowers & Wilkins Diamond.</h1>
                     <p>
@@ -644,7 +644,7 @@ img {
               </div> 
             <div id="tsktx7"><h1>THÔNG SỐ KĨ THUẬT CỦA THE NEW BMW X7.</h1>
             <h5>BMW X7 xDrive40i.</h5>
-            <img src="../image/thốngkithuatx7.webp" >
+            <img src="./image-BMWX7/thốngkithuatx7.webp" >
           </div> 
           <div>
             <table style="margin-left: 730px;" class="bangkithuatx7">
@@ -674,7 +674,7 @@ img {
           <div class="docthemx7"><a href="https://drive.google.com/file/d/1_SteL3e1zgCwz_gqqxs1Rz9Lk9zjRcO3/view">Learn  more</a> </div>
           <div id="tc"><h1>CHÍNH SÁCH TÀI CHÍNH CHO BMW X7.</h1>
             <p>BNW thiết kế các chính sách tài chính để điều chỉnh riêng để phù hợp với nhu cầu và mong muốn của bạn</p>
-            <img src="../image/taichinhx7.webp">
+            <img src="./image-BMWX7/taichinhx7.webp">
           </div> 
           <div id="tieuhaonhienlieux7">
             <h1>MỨC TIÊU HAO NHIÊU LIỆU VÀ MỨC PHÁT THẢI CO2</h1>
