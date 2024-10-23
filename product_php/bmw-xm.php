@@ -342,7 +342,7 @@ img {
               href="https://drive.google.com/file/d/1fwIk0HqL22SFhNVqE3ye0xF4wiJNxXPq/view"
               >Thông số kĩ thuât</a
             >
-        </div>
+         </div>
         <br />
         <hr />
         <div class="anhphu"> <img src="./image-BMWXM/anhphuxm.jpg"></div>
