@@ -20,7 +20,7 @@ img {
   display: block;
 }
 #headerx6 {
-  background-image: url(../image/anhtieudex6.webp);
+  background-image: url(./image-BMWX6/anhtieudex6.webp);
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center top 70px;
@@ -161,37 +161,37 @@ img {
 .carouselx6 {
   position: relative;
   width: 100%;
-  max-width: 800px; /* Đặt giới hạn chiều rộng */
-  margin: auto; /* Căn giữa carousel */
-  overflow: hidden; /* Ẩn các phần slide nằm ngoài khu vực hiển thị */
-  border: 2px solid #ddd; /* Khung xung quanh carousel (tuỳ chọn) */
+  max-width: 800px; 
+  margin: auto; 
+  overflow: hidden;
+  border: 2px solid #ddd; 
 }
 
-/* Container của các slides */
+
 .slides-wrapperx6 {
-  overflow: hidden; /* Đảm bảo chỉ hiện 1 slide tại một thời điểm */
+  overflow: hidden; 
 }
 
-/* Đặt các slide nằm ngang với flex */
+
 .slidesx6 {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* Chuyển động mượt mà khi chuyển slide */
+  transition: transform 0.5s ease-in-out; 
 }
 
-/* Từng slide chiếm toàn bộ chiều rộng carousel */
+
 .slidex6 {
-  min-width: 100%; /* Mỗi slide chiếm 100% chiều rộng của carousel */
+  min-width: 100%; 
   box-sizing: border-box;
 }
 
-/* Căn chỉnh và tạo style cho nội dung trong từng slide */
+
 .slidex6 img {
-  width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của slide */
-  height: auto; /* Giữ tỉ lệ của ảnh */
+  width: 100%;
+  height: auto; 
 }
 
 .contentx6 {
-  background-color: rgba(0, 0, 0, 0.6); /* Nền mờ cho phần nội dung */
+  background-color: rgba(0, 0, 0, 0.6); 
   color: white;
   padding: 20px;
   position: absolute;
@@ -212,48 +212,48 @@ img {
   font-size: 16px;
 }
 
-/* Nút mũi tên trái phải */
+
 .arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); /* Căn giữa nút mũi tên theo chiều dọc */
-  background-color: rgba(0, 0, 0, 0.5); /* Nền mờ cho nút */
+  transform: translateY(-50%); 
+  background-color: rgba(0, 0, 0, 0.5); 
   color: white;
   border: none;
   font-size: 24px;
   padding: 10px;
   cursor: pointer;
-  z-index: 10; /* Đảm bảo nút nằm trên các slide */
+  z-index: 10; 
 }
 
-/* Nút mũi tên trái */
+
 .arrow.leftx6 {
-  left: 0; /* Đặt nút ở bên trái */
+  left: 0; 
 }
 
-/* Nút mũi tên phải */
+
 .arrow.rightx6 {
-  right: 0; /* Đặt nút ở bên phải */
+  right: 0; 
 }
 
-/* Hiệu ứng khi di chuột vào nút mũi tên */
+
 .arrow:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Tăng độ mờ khi di chuột vào */
+  background-color: rgba(0, 0, 0, 0.8); 
 }
 
-/* Đảm bảo carousel hoạt động tốt trên các màn hình nhỏ */
+
 @media (max-width: 768px) {
   .contentx6 h2 {
-    font-size: 20px; /* Giảm kích thước chữ trên màn hình nhỏ */
+    font-size: 20px; 
   }
 
   .contentx6 p {
-    font-size: 14px; /* Giảm kích thước chữ cho đoạn văn */
+    font-size: 14px; 
   }
 
   .arrow {
-    font-size: 18px; /* Giảm kích thước nút mũi tên */
-    padding: 8px; /* Giảm padding của nút */
+    font-size: 18px; 
+    padding: 8px; 
   }
 }
 .BMWWx6 {
@@ -293,7 +293,7 @@ img {
   font-size: 20px;
   font-weight: 300;
   margin-right: 20px;
-  border-collapse: collapse; /* Để các đường viền không bị giãn */
+  border-collapse: collapse; 
   display: table-cell;
   margin-top: -400px;
 }
@@ -389,7 +389,7 @@ img {
         <h2 class="thietkenoibatx6">Ngoại thất.</h2>
         <div id="ngoaithatx6">
           <div class="motax6">
-            <img src="../image/thamchaomungx6.webp" />
+            <img src="./image-BMWX6/thamchaomungx6.webp" />
             <div class="textx6">
               <h1>Thảm chào mừng.</h1>
               <p>
@@ -402,7 +402,7 @@ img {
             </div>
           </div>
           <div class="motax6">
-            <img src="../image/cuasotroix6.webp" />
+            <img src="./image-BMWX6/cuasotroix6.webp" />
             <div class="textx6">
               <h1>Cửa sổ trời Panorama.</h1>
               <p>
@@ -415,7 +415,7 @@ img {
             </div>
           </div>
           <div class="motax6">
-            <img src="../image/banhmamx6.webp" />
+            <img src="./image-BMWX6/banhmamx6.webp" />
             <div class="textx6">
               <h1>Bánh mâm.</h1>
               <p>
@@ -430,7 +430,7 @@ img {
         <h2 class="thietkenoibatx6">Nội thất.</h2>
         <div class="noithatx6">
           <div class="motaax6">
-            <img src="../image/denviennoithatx6.webp" />
+            <img src="./image-BMWX6/denviennoithatx6.webp" />
             <div class="textx6">
               <h1>Đèn viền nội thất.</h1>
               <p>
@@ -443,7 +443,7 @@ img {
             </div>
           </div>
           <div class="motaax6">
-            <img src="../image/chitietnoithatx6.webp" />
+            <img src="./image-BMWX6/chitietnoithatx6.webp" />
             <div class="textx6">
               <h1>Các chi tiết nội thất ốp pha lê 'CraftedClarity'.</h1>
               <p>
@@ -464,35 +464,35 @@ img {
           <div class="slides-wrapperx6">
               <div class="slidesx6">
                   <div class="slidex6">
-                      <img src="../image/canhluotgiox6.webp">
+                      <img src="./image-BMWX6/canhluotgiox6.webp">
                       <div class="contentx6">
                           <h2>Cánh lướt gió phía sau M Carbon.</h2>
                           <p>Cánh lướt gió phía sau M Carbon nhấn mạnh thiết kế mạnh mẽ, thể thao của xe, đồng thời giúp giảm lực cản nâng khí động học ở sau xe.</p>
                       </div>
                   </div>
                   <div class="slidex6">
-                      <img src="../image/ghethethaox6.webp">
+                      <img src="./image-BMWX6/ghethethaox6.webp">
                       <div class="contentx6">
                           <h2>Ghế thể thao cho người lái và hành khách phía trước.</h2>
                           <p>Năng động và thoải mái: ghế thể thao tiêu chuẩn, có chức năng chỉnh điện đa hướng cho hàng ghế trước có nhiều tùy chọn điều chỉnh điện. Ngoài ra, hàng ghế trước còn có tính năng điều chỉnh đệm bưng lưng, giúp người ngồi trên xe có tư thế ngồi thoải mái và ổn định cơ thể, đặc biệt là khi vào cua gấp.</p>
                       </div>
                   </div>
                   <div class="slidex6">
-                      <img src="../image/drivex6.webp">
+                      <img src="./image-BMWX6/drivex6.webp">
                       <div class="contentx6">
                           <h2>BMW xDrive.</h2>
                           <p>Hệ thống dẫn động bốn bánh BMW xDrive thông minh có khả năng linh hoạt lực kéo giữa cầu trước và cầu sau với tốc độ xử lý cực nhanh. Hệ dẫn động xDrive giúp xe linh hoạt hơn, bám đường tốt hơn và an toàn hơn trên mọi điều kiện địa hình, có khả năng ngăn chặn các tình huống thừa lái và thiếu lái, hỗ trợ vào cua tốt hơn.</p>
                       </div>
                   </div>
                   <div class="slidex6">
-                      <img src="../image/controlx6.webp">
+                      <img src="./image-BMWX6/controlx6.webp">
                       <div class="contentx6">
                           <h2>Driving Experience Control.</h2>
                           <p>Chức năng Driving Experience Control giúp người lái có thể tùy chỉnh chế độ lái theo mong muốn, bao gồm 3 chế độ: Comfort - chế độ tiêu chuẩn, ECO PRO - chế độ tiết kiệm nhiên liệu và Sport - chế độ lái xe thể thao. Chức năng Adaptive Mode sẽ điều chỉnh liên tục hệ thống treo thích ứng, hệ thống lái và hộp số để phù hợp với tình hình lái xe ngay lúc đó.</p>
                       </div>
                   </div>
                   <div class="slidex6">
-                      <img src="../image/hethongtreox6.webp">
+                      <img src="./image-BMWX6/hethongtreox6.webp">
                       <div class="contentx6">
                           <h2>Hệ thống treo thích ứng M.</h2>
                           <p>Hệ thống treo thích ứng M có khả năng điều chỉnh để thích ứng với điều kiện đường xá và người lái. Chủ xe cũng có thể điều chỉnh các đặc tính của hệ thống treo thông qua chức năng chuyển đổi chế độ lái (Driving Experience), chức năng này cho phép chủ xe chuyển đổi chế độ lái theo sở thích - từ sự thoải mái đến cảm giác lái thể thao với khả năng xử lý cực kỳ nhanh nhẹn.</p>
@@ -527,7 +527,7 @@ img {
           <h2 class="BMWWx6">Original BMW Accessories</h2>
           <div id="Originalx6">
             <div class="gioithieux6">
-              <img src="../image/copnocx6.webp" />
+              <img src="./image-BMWX6/copnocx6.webp" />
               <div class="tieudex6">
                 <h1>Thanh ngang cốp nóc BMW.</h1>
                 <p>
@@ -543,7 +543,7 @@ khóa chống trộm.
               </div>
             </div>
             <div class="gioithieux6">
-              <img src="../image/cuasotroix6.webp" />
+              <img src="./image-BMWX6/cuasotroix6.webp" />
               <div class="tieudex6">
                 <h1>Hộp mui trần cabin BMW 520 bằng bạc titan/màu đen.</h1>
                 <p>
@@ -558,7 +558,7 @@ chống trộm.
               </div>
             </div>
             <div class="gioithieux6">
-              <img src="../image/banhmamx6.webp" />
+              <img src="./image-BMWX6/banhmamx6.webp" />
               <div class="tieudex6">
                 <h1>Thảm khoang hành lý.</h1>
                 <p>Thảm chống trượt, chịu nước và bền bỉ với
@@ -575,7 +575,7 @@ chống trộm.
           <h2 class="BMWWx6" style="font-weight: 400;">XỨNG DANH "MÃNH THÚ ĐẦU ĐÀN" Ở DÒNG XE GẦM CAO</h2>
           <div id="Originalx6">
             <div class="gioithieux6">
-              <img src="../image/đàu xex6.webp" />
+              <img src="./image-BMWX6/đàu xex6.webp" />
               <div class="tieudex6">
                 <h1>Đầu xe thu hút ánh nhìn.</h1>
                 <p>
@@ -584,7 +584,7 @@ chống trộm.
               </div>
             </div>
             <div class="gioithieux6">
-              <img src="../image/kieudangx6.webp" />
+              <img src="./image-BMWX6/kieudangx6.webp" />
               <div class="tieudex6">
                 <h1>Kiểu dáng thể thao như xe Coupé.</h1>
                 <p>
@@ -593,7 +593,7 @@ chống trộm.
               </div>
             </div>
             <div class="gioithieux6">
-              <img src="../image/menhdanhx6.webp" />
+              <img src="./image-BMWX6/menhdanhx6.webp" />
               <div class="tieudex6">
                 <h1>Mệnh danh là "Mãnh quái".</h1>
                 <p>
@@ -608,7 +608,7 @@ chống trộm.
           font-weight: 300;
           margin-left: 30px;">THÔNG SỐ KĨ THUẬT</h1>
           <h3 style="font-size: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 200; margin-left: 30px;">BMW X6 xDrive40i.</h3></div>
-          <div> <img src="../image/thongsokithuatx6.webp"> </div>
+          <div> <img src="./image-BMWX6/thongsokithuatx6.webp"> </div>
           <div>
           <table class="bangkithuatx6">
             <tr>
@@ -634,7 +634,7 @@ chống trộm.
             </tr>
           </table>
           <h1 class="BMWWx6" style="margin-top: 200px; font-weight: 400;">DỊCH VỤ VÀ HỖ TRỢ CHO BMW X6.</h1>
-          <div class="tuvanx6"><img style="margin-left: 30px;" src="../image/tuvanx6.webp"></div>
+          <div class="tuvanx6"><img style="margin-left: 30px;" src="./image-BMWX6/tuvanx6.webp"></div>
           <div class="thacmacx6">
             <h1 style="font-size: 25px; font-weight: 400; padding-top: 40px;">BẠN CÓ MUỐN ĐƯỢC TƯ VẤN TRỰC TIẾP?</h1>
             <p>Nếu bạn có bất kỳ thắc mắc nào, cần thêm thông tin hoặc muốn biết các ưu đãi cụ thể về BMW X6, vui lòng liên hệ với Đại lý BMW gần nhất. Chuyên viên tư vấn BMW chuyên nghiệp của chúng tôi sẽ sẵn lòng tư vấn cá nhân cho bạn qua điện thoại hoặc trực tiếp tại showroom.​
