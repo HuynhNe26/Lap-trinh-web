@@ -55,7 +55,7 @@ while ($row = $result_theloai->fetch_assoc())
 if ($result_chitiettheloai->num_rows > 0) {
     while ($row = $result_sanpham->fetch_assoc()) {
 ?>
-        <a class="sanpham__a" href="product_php/<?php echo $row['link']; ?>" style="text-decoration:none;margin-left:60px;float:left;margin-top:60px">
+        <a class="sanpham__a" href="index.php?pid=8&masp=<?php echo $row['masp']; ?>" style="text-decoration:none;margin-left:60px;float:left;margin-top:60px">
             <img class="sanpham__img" src="image/<?php echo $row['hinhanh']; ?>" ><br> <br> <br>
             <span class="sanpham__content-main"  ><?php echo $row['tensp']; ?></span> <br>
             <span class="sanpham__content" ><?php echo $row['mota']; ?></span> <br>
