@@ -6,7 +6,7 @@
     <title>BMW IX3</title>
     <style>
       body {
-  background-image: url("../image/stare-logo-bmw-jednak-zostaje-nowe-tylko-dla-mediw-2.jpg");
+  background-image: url("./image/stare-logo-bmw-jednak-zostaje-nowe-tylko-dla-mediw-2.jpg");
   background-size: 100%, 100%;
   background-repeat: no-repeat;
 }
@@ -34,10 +34,10 @@
   </head>
   <div class="container">
     <a href="./index-ix3.php">
-      <img src="../image/bmw ix3-navy.jpg" />
-      <img src="../image/bmw ix3 black.jpg" />
-      <img src="../image/2021-bm-wi-x-32-1588037323462.webp" />
-      <img src="../image/background.jpg" />
+      <img src="./image/bmw ix3-navy.jpg" />
+      <img src="./image/bmw ix3 black.jpg" />
+      <img src="./image/2021-bm-wi-x-32-1588037323462.webp" />
+      <img src="./image/background.jpg" />
     </a>
   </div>
 </html>
