@@ -24,7 +24,7 @@ img {
   display: block;
 }
 #header {
-  background-image: url(../image/nen\ bmwz4.webp);
+  background-image: url(./image/nen\ bmwz4.webp);
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center top 70px;
@@ -383,7 +383,7 @@ img {
         <h2 class="thietkenoibat">Nội thất.</h2>
         <div id="ngoaithat">
           <div class="mota">
-            <img src="../image/ghế bmwz4.webp" />
+            <img src="./image/ghế bmwz4.webp" />
             <div class="text">
               <h1>Ngoại có thể thao tác cho hàng ghế trước.</h1>
               <p>
@@ -392,7 +392,7 @@ img {
             </div>
           </div>
           <div class="mota">
-            <img src="../image/đèn trang trí bmwz4.webp" />
+            <img src="./image/đèn trang trí bmwz4.webp" />
             <div class="text">
               <h1>Đèn trang trí nội thất theo phong cách tân cổ điển.</h1>
               <p>
@@ -401,7 +401,7 @@ img {
             </div>
           </div>
           <div class="mota">
-            <img src="../image/loa bmwz4.webp" />
+            <img src="./image/loa bmwz4.webp" />
             <div class="text">
               <h1>
                 Hệ thống âm thanh Harman Kardon.</h1>
@@ -416,7 +416,7 @@ img {
         <h2 class="thietkenoibat">Ngoại thất.</h2>
         <div class="noithat">
           <div class="motaa">
-            <img src="../image/đầu xe.webp" />
+            <img src="./image/đầu xe.webp" />
             <div class="text">
               <h1>Cẩn thận lưới tản nhiệt</h1>
               <p>
@@ -425,7 +425,7 @@ img {
             </div>
           </div>
           <div class="motaa">
-            <img src="../image/thân xe bmwz4.webp" />
+            <img src="./image/thân xe bmwz4.webp" />
             <div class="text">
               <h1>Hốc gió.</h1>
               <p>
@@ -434,7 +434,7 @@ img {
             </div>
           </div>
           <div class="motaa">
-            <img src="../image/đuôi xe bmwz4.webp" />
+            <img src="./image/đuôi xe bmwz4.webp" />
             <div class="text">
               <h1>Ống xả mạ crôm bóng.</h1>
               <p>
@@ -443,7 +443,7 @@ img {
             </div>
           </div>
           <div class="motaa">
-            <img src="../image/mui xe bmwzz4.webp" />
+            <img src="./image/mui xe bmwzz4.webp" />
             <div class="text">
               <h1>Mũi mềm.</h1>
               <p>
@@ -452,7 +452,7 @@ img {
             </div>
           </div>
           <div class="motaa">
-            <img src="../image/shadow bmwz4.webp" />
+            <img src="./image/shadow bmwz4.webp" />
             <div class="text">
               <h1>Gói trang bị M Shadow Line có độ bóng cao.</h1>
               <p>
@@ -471,24 +471,24 @@ img {
           <div class="slides-wrapper">
               <div class="slides">
                   <div class="slide">
-                      <img src="../image/bmwz4(1).webp">
+                      <img src="./image/bmwz4(1).webp">
                       
                   </div>
                   <div class="slide">
                       
-                        <img src="../image/bmwz4(2).webp">
+                        <img src="./image/bmwz4(2).webp">
                   </div> 
 
                   <div class="slide">
-                      <img src="../image/bmwz4(3).webp">
+                      <img src="./image/bmwz4(3).webp">
                      
                   </div>
                   <div class="slide">
-                      <img src="../image/bmwz4(4).webp">
+                      <img src="./image/bmwz4(4).webp">
                       
                   </div>
                   <div class="slide">
-                      <img src="../image/bmwz4(1).webp">
+                      <img src="./image/bmwz4(1).webp">
                       
                   </div>
               </div>
@@ -523,7 +523,7 @@ img {
           
          <div id="Original">
             <div class="gioithieu">
-              <img src="../image/cao phanh bmwz4.webp" />
+              <img src="./image/cao phanh bmwz4.webp" />
               <div class="tieude">
                 <h1>Cao phanh hệ thống M Sport.</h1>
                 <p>
@@ -533,7 +533,7 @@ img {
             </div>
             
             <div class="gioithieu">
-              <img src="../image/hộp số bmwz4.webp" />
+              <img src="./image/hộp số bmwz4.webp" />
               <div class="tieude">
                 <h1>Hộp số auto 8 cấp steptronic.</h1>
                 <p>
@@ -543,7 +543,7 @@ img {
             </div>
            
             <div class="gioithieu">
-              <img src="../image/động cơ bmwz4.webp" />
+              <img src="./image/động cơ bmwz4.webp" />
               <div class="tieude">
                 <h1>Động cơ TwinPower Turbo</h1>
                 <p>Sức kéo mạnh mẽ, vận hành trơn tru và âm thanh cuốn hút là những biểu tượng nổi bật đặc biệt của động cơ loy 4 xy-lanh thẳng hàng TwinPower Turbo. Với 2 hệ thống van biến thiên Valvetronic, VANOS và bộ phun nhiên liệu có độ chính xác cao HPI kết hợp cùng bộ tăng áp cuộn kép giúp động cơ vận hành hiệu suất và thể thao.
@@ -555,7 +555,7 @@ img {
           <h2 class="BMWW" style="font-weight: 400;">HỆ THỐNG HỖ TRỢ LÁI XE CỦA BMW Z4.</h2>
           <div id="Original">
             <div class="gioithieu">
-              <img src="../image/hổ trợ lui bmwz4.webp" />
+              <img src="./image/hổ trợ lui bmwz4.webp" />
               <div class="tieude">
                 <h1>Hỗ trợ Reversing Assistant xe lùi.</h1>
                 <p>
@@ -565,7 +565,7 @@ img {
             </div>
             
             <div class="gioithieu">
-              <img src="../image/chắn gió bmwz4.webp" />
+              <img src="./image/chắn gió bmwz4.webp" />
               <div class="tieude">
                 <h1>Màn hình hiển thị thông tin trên kính chắn gió của BMW.</h1>
                 <p>
@@ -575,7 +575,7 @@ img {
             </div>
             
             <div class="gioithieu">
-              <img src="../image/trợ lý cá nhân bmwz4.webp" />
+              <img src="./image/trợ lý cá nhân bmwz4.webp" />
               <div class="tieude">
                 <h1>Trợ lý cá nhân thông minh BMW Intelligence Personal Assistant.</h1>
                 <p>
@@ -618,7 +618,7 @@ img {
             </tr>
           </table>
           <h1 class="BMWW" style="margin-top: 200px; font-weight: 400;">DỊCH VỤ VÀ HỖ TRỢ CHO BMW Z4</h1>
-          <div class="tuvan"><img style="margin-left: 30px;" src="../image/lien lạc bmwz4.webp"></div>
+          <div class="tuvan"><img style="margin-left: 30px;" src="./image/lien lạc bmwz4.webp"></div>
           <div class="thacmac">
             <h1 style="font-size: 25px; font-weight: 400; padding-top: 40px;">BẠN CÓ MUỐN ĐƯỢC TƯ VẤN TRỰC TIẾP?</h1>
             <p>Nếu bạn có bất kỳ thắc mắc nào, cần thêm thông tin hoặc muốn biết các ưu đãi cụ thể về BMW Z4, vui lòng liên hệ với Đại lý BMW gần nhất. Chuyên viên tư vấn BMW chuyên nghiệp của chúng tôi sẽ sẵn lòng tư vấn cá nhân cho bạn qua điện thoại hoặc trực tiếp tại showroom.​
