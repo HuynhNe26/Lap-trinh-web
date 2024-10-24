@@ -6,7 +6,7 @@
     <title>BMW Z4</title>
     <style>
       body {
-  background-image: url("../image/stare-logo-bmw-jednak-zostaje-nowe-tylko-dla-mediw-2.jpg");
+  background-image: url("./image/stare-logo-bmw-jednak-zostaje-nowe-tylko-dla-mediw-2.jpg");
   background-size: 100%, 100%;
   background-repeat: no-repeat;
 }
@@ -35,10 +35,10 @@
   </head>
   <div class="container">
     <a href="./index-z4.php">
-      <img src="../image/BMW Z.avif" />
-      <img src="../image/bmw z4 xám.jpg" />
-      <img src="../image/bmw-z4 đỏ.jpg" />
-      <img src="../image/bmw z4 green.avif" />
+      <img src="./image/BMW Z.avif" />
+      <img src="./image/bmw z4 xám.jpg" />
+      <img src="./image/bmw-z4 đỏ.jpg" />
+      <img src="./image/bmw z4 green.avif" />
     </a>
   </div>
 </html>
