@@ -20,7 +20,7 @@ img {
   display: block;
 }
 #header {
-  background-image: url(../image/nền\ bmwix3.webp);
+  background-image: url(./image/nền\ bmwix3.webp);
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center top 70px;
@@ -380,7 +380,7 @@ img {
         <h2 class="thietkenoibat">Mạnh mẽ, hiệu suất và sáng tạo hơn bao giờ hết: Sở hữu công nghệ BMW eDrive kết hợp pin điện áp cao mới và hệ thống treo thích ứng, Bánh SAV bong bóng sáng bằng khả năng tăng tốc ấn biểu tượng trên mọi cung path.</h2>
         <div id="ngoaithat">
           <div class="mota">
-            <img src="../image/hệ thống bmwix3.webp" />
+            <img src="./image/hệ thống bmwix3.webp" />
             <div class="text">
               <h1>Ứng dụng hệ thống thích hợp.</h1>
               <p>
@@ -389,7 +389,7 @@ img {
             </div>
           </div>
           <div class="mota">
-            <img src="../image/bộ truyền điện bmwix3.webp" />
+            <img src="./image/bộ truyền điện bmwix3.webp" />
             <div class="text">
               <h1>Bộ truyền động điện</h1>
               <p>
@@ -398,7 +398,7 @@ img {
             </div>
           </div>
           <div class="mota">
-            <img src="../image/hệ thống năng lương bmwix3.webp" />
+            <img src="./image/hệ thống năng lương bmwix3.webp" />
             <div class="text">
               <h1>Hệ thống tái tạo năng lượng</h1>
               <p>
@@ -411,7 +411,7 @@ img {
         <h2 class="thietkenoibat">Sức mạnh tuyệt đối</h2>
         
           <div class="motaa">
-            <img src="../image/quãng đường bmwix3.webp" />
+            <img src="./image/quãng đường bmwix3.webp" />
             <div class="text">
               <h1>QUẢNG ĐƯỜNG HOẠT ĐỘNG LÊN ĐẾN 461KM BMW iX3</h1>
               <p>
@@ -428,21 +428,21 @@ img {
           <div class="slides-wrapper">
               <div class="slides">
                   <div class="slide">
-                      <img src="../phananh/canhluotgio.webp">
+                      <img src="./phananh/canhluotgio.webp">
                       <div class="content">
                           <h2>Cánh lướt gió phía sau M Carbon.</h2>
                           <p>Cánh lướt gió phía sau M Carbon nhấn mạnh thiết kế mạnh mẽ, thể thao của xe, đồng thời giúp giảm lực cản nâng khí động học ở sau xe.</p>
                       </div>
                   </div>
                   <div class="slide">
-                      <img src="../phananh/ghethethao.webp">
+                      <img src="./phananh/ghethethao.webp">
                       <div class="content">
                           <h2>Ghế thể thao cho người lái và hành khách phía trước.</h2>
                           <p>Năng động và thoải mái: ghế thể thao tiêu chuẩn, có chức năng chỉnh điện đa hướng cho hàng ghế trước có nhiều tùy chọn điều chỉnh điện. Ngoài ra, hàng ghế trước còn có tính năng điều chỉnh đệm bưng lưng, giúp người ngồi trên xe có tư thế ngồi thoải mái và ổn định cơ thể, đặc biệt là khi vào cua gấp.</p>
                       </div>
                   </div>
                   <div class="slide">
-                      <img src="../phananh/drive.webp">
+                      <img src="./phananh/drive.webp">
                       <div class="content">
                           <h2>BMW xDrive.</h2>
                           <p>Hệ thống dẫn động bốn bánh BMW xDrive thông minh có khả năng linh hoạt lực kéo giữa cầu trước và cầu sau với tốc độ xử lý cực nhanh. Hệ dẫn động xDrive giúp xe linh hoạt hơn, bám đường tốt hơn và an toàn hơn trên mọi điều kiện địa hình, có khả năng ngăn chặn các tình huống thừa lái và thiếu lái, hỗ trợ vào cua tốt hơn.</p>
@@ -491,7 +491,7 @@ img {
           <h2 class="BMWW">CÔNG VƯỢT TRỘI TỪ BMW iX3.</h2>
           <div id="Original">
             <div class="gioithieu">
-              <img src="../image/trợ lý ảo bmwix3.webp" />
+              <img src="./image/trợ lý ảo bmwix3.webp" />
               <div class="tieude">
                 <h1>Trợ lý đậu xe Đỗ xe</h1>
                 <p>
@@ -501,7 +501,7 @@ img {
             </div>
             
             <div class="gioithieu">
-              <img src="../image/trợ lý cá nhân bmwix3.webp" />
+              <img src="./image/trợ lý cá nhân bmwix3.webp" />
               <div class="tieude">
                 <h1>Trợ lý cá nhân BMW Smart Personal Assistant.</h1>
                 <p>
@@ -510,7 +510,7 @@ img {
               </div>
             </div>
             <div class="gioithieu">
-              <img src="../image/trợ lý ảo bmwix3.webp" />
+              <img src="./image/trợ lý ảo bmwix3.webp" />
               <div class="tieude">
                 <h1>Trợ lý đậu xe Đỗ xe</h1>
                 <p>Đỗ xe tự động Hỗ trợ đỗ xe của BMW iX3 hỗ trợ đỗ xe tự động và chính xác. Với các cảm biến và camera hiện đại, hệ thống giúp bạn đỗ xe dễ dàng trong mọi không gian chật hẹp, mang lại sự tiện lợi và an toàn tối đa.
@@ -522,7 +522,7 @@ img {
           <h2 class="BMWW" style="font-weight: 400;">NGOẠI THẤT ẤN TƯỢNG của BMW IX3</h2>
           <div id="Original">
             <div class="gioithieu">
-              <img src="../image/đầu xe bmwix3.webp" />
+              <img src="./image/đầu xe bmwix3.webp" />
               <div class="tieude">
                 <h1>Thiết kế đầu xe</h1>
                 <p>
@@ -531,7 +531,7 @@ img {
               </div>
             </div>
             <div class="gioithieu">
-              <img src="../image/thân xe bmwix3.webp" />
+              <img src="./image/thân xe bmwix3.webp" />
               <div class="tieude">
                 <h1>Thiết kế thân xe.</h1>
                 <p>
@@ -540,7 +540,7 @@ img {
               </div>
             </div>
             <div class="gioithieu">
-              <img src="../image/đuôi xe bmwix3.webp" />
+              <img src="./image/đuôi xe bmwix3.webp" />
               <div class="tieude">
                 <h1>Thiết kế đuôi xe.</h1>
                 <p>
@@ -556,7 +556,7 @@ img {
           font-weight: 300;
           margin-left: 30px;">THÔNG SỐ KĨ THUẬT</h1>
           <h3 style="font-size: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 200; margin-left: 30px;">BMW IX3</h3></div>
-          <div> <img src="../image/thong số kĩ thuật bmwix3.webp"> </div>
+          <div> <img src="./image/thong số kĩ thuật bmwix3.webp"> </div>
           <div>
           <table class="bangkithuat">
             <tr>
@@ -582,7 +582,7 @@ img {
             </tr>
           </table>
           <h1 class="BMWW" style="margin-top: 200px; font-weight: 400;">DỊCH VỤ VÀ HỖ TRỢ CHO BMW iX3</h1>
-          <div class="tuvan"><img style="margin-left: 30px;" src="../image/tư vấn bmwix3.webp"></div>
+          <div class="tuvan"><img style="margin-left: 30px;" src="./image/tư vấn bmwix3.webp"></div>
           <div class="thacmac">
             <h1 style="font-size: 25px; font-weight: 400; padding-top: 40px;">BẠN CÓ MUỐN ĐƯỢC TƯ VẤN TRỰC TIẾP?</h1>
             <p>Nếu bạn có bất kỳ thắc mắc nào, cần thêm thông tin hoặc muốn biết các ưu đãi cụ thể về BMW IX3, vui lòng liên hệ với Đại lý BMW gần nhất. Chuyên viên tư vấn BMW chuyên nghiệp của chúng tôi sẽ sẵn lòng tư vấn cá nhân cho bạn qua điện thoại hoặc trực tiếp tại showroom.​
