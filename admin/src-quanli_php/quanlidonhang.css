@@ -1,0 +1,79 @@
+/* General table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Action buttons styling */
+.detail-btn, .confirm-btn, .deliver-btn, .delete-btn {
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.detail-btn {
+    background-color: #008CBA;
+}
+
+.confirm-btn {
+    background-color: #4CAF50;
+}
+
+.deliver-btn {
+    background-color: #FF9800;
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.detail-btn:hover {
+    background-color: #007BB5;
+}
+
+.confirm-btn:hover {
+    background-color: #45a049;
+}
+
+.deliver-btn:hover {
+    background-color: #FB8C00;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin-left:130px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
