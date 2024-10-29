@@ -1,0 +1,60 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 270px; /* Adjust based on the navbar width */
+    padding: 40px;
+    flex: 1;
+}
+
+.main-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Footer styles */
+footer {
+    z-index: 100;
+    position: fixed;
+    text-align: start;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%; 
+}
+
+footer span {
+    font-size:15px;
+}
+
+footer {
+    animation: botToTop 1s ease forwards;
+}
+
+@keyframes botToTop {
+    from {
+        transform: translateY(60px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
