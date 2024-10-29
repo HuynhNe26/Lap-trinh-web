@@ -1,0 +1,81 @@
+/* Main container */
+.main-content {
+    max-width: 900px;
+    margin-left:130px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Button Container */
+.button-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.btn-add {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-add:hover {
+    background-color: #45a049;
+}
+
+/* Products Table */
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.products-table th, 
+.products-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.products-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.products-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Action Buttons */
+.btn-edit, .btn-delete {
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.btn-edit {
+    background-color: #2196F3;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #1976D2;
+}
+
+.btn-delete:hover {
+    background-color: #e53935;
+}
