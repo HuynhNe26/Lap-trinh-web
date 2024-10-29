@@ -1,61 +1,61 @@
 <?php
 session_start();
-$host = 'localhost'; // Thay đổi nếu cần
-$db = 'db_giohang'; // Thay thế bằng tên cơ sở dữ liệu của bạn
-$user = 'root'; // Thay thế bằng tên người dùng cơ sở dữ liệu của bạn
-$pass = ''; // Thay thế bằng mật khẩu cơ sở dữ liệu của bạn
+$host = 'localhost'; 
+$db = 'db_giohang'; 
+$user = 'root'; 
+$pass = ''; 
 
 // Tạo kết nối
 $conn = new mysqli($host, $user, $pass, $db);
 
-// Kiểm tra kết nối
+
 if ($conn->connect_error) {
     die("Kết nối thất bại: " . $conn->connect_error);
 }
 
-// Xử lý thêm sản phẩm vào giỏ hàng
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['masp'])) {
     $masp = $_POST['masp'];
     $quantity = $_POST['quantity'];
 
-    // Kiểm tra nếu giỏ hàng đã tồn tại trong session
+   
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = [];
     }
 
-    // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng hay chưa
+  
     if (array_key_exists($masp, $_SESSION['cart'])) {
-        $_SESSION['cart'][$masp] += $quantity; // Tăng số lượng
+        $_SESSION['cart'][$masp] += $quantity;
     } else {
-        $_SESSION['cart'][$masp] = $quantity; // Thêm sản phẩm mới
+        $_SESSION['cart'][$masp] = $quantity;
     }
 }
 
-// Xử lý xóa sản phẩm
+
 if (isset($_GET['remove'])) {
     $remove_masp = $_GET['remove'];
     unset($_SESSION['cart'][$remove_masp]);
 }
 
-// Lấy thông tin sản phẩm từ cơ sở dữ liệu
+
 $product_ids = isset($_SESSION['cart']) ? array_keys($_SESSION['cart']) : [];
 if (count($product_ids) > 0) {
     $product_ids_string = implode(',', $product_ids);
     $sql = "SELECT masp, tensp, mota, dongia, hinhanh FROM sanpham WHERE masp IN ($product_ids_string)";
     $result = $conn->query($sql);
 
-    // Tính tổng thành tiền
+
     $total_price = 0;
-    $product_details = []; // Mảng lưu thông tin sản phẩm
+    $product_details = []; 
     while ($row = $result->fetch_assoc()) {
         $quantity = $_SESSION['cart'][$row['masp']];
-        $row['quantity'] = $quantity; // Thêm số lượng vào thông tin sản phẩm
-        $product_details[] = $row; // Lưu thông tin sản phẩm vào mảng
-        $total_price += $row['dongia'] * $quantity; // Tính tổng giá trị
+        $row['quantity'] = $quantity; 
+        $product_details[] = $row; 
+        $total_price += $row['dongia'] * $quantity; 
     }
 } else {
-    $product_details = []; // Giỏ hàng trống
-    $total_price = 0; // Tổng thành tiền
+    $product_details = []; 
+    $total_price = 0; 
 }
 ?>
 
