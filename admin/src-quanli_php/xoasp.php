@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
-    $conn = mysqli_connect("localhost", "root", "", "cua_hang_oto");
+    $conn = mysqli_connect("localhost", "root", "", "bmw_web");
     if (!$conn) {
         die("Kết nối thất bại: " . mysqli_connect_error());
     }
