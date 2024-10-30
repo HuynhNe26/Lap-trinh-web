@@ -58,13 +58,13 @@
                 break;
                 case 7: include('src_php/timkiem.php');
                 break;
-                case 8: include('src_php/giohang.php');
+                case 8: include('src_php/addgiohang.php');
                 break;
                 case 9: include('src_php/datxe-infor.php');
                 break;
                 case 10: include('src_php/xacnhan-datxe.php');
                 break;
-                case 11: include('src_php/themsp.php');
+                case 11: include('src_php/check-giohang.php');
                 break;
                 }
             }
