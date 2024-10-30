@@ -33,16 +33,16 @@ while ($row = $result_theloai->fetch_assoc())
 </ul>
 </div>
 
-<div style="border-bottom:1px solid var(--lightgrey-color);">
-        <ul style="list-style:none;display:inline-flex;text-align:center;padding:0;cursor:pointer;align-items:center;margin:auto">
+<div class="chitiettl__div" style="border-bottom:1px solid var(--lightgrey-color);">
+        <ul class="chitiettl__ul" style="list-style:none;display:inline-flex;text-align:center;padding:0;cursor:pointer;align-items:center;margin:auto">
         <?php
         while ($row = $result_chitiettheloai->fetch_assoc())
         {
         ?>
-        <a class="chitiettl__a" href="index.php?pid=1&matl=<?php echo $row['matl'] ?>&machitiettl=<?php echo $row['machitiettl'] ?>" style="text-decoration:none; color: grey;font-size:15px;font-family:arial;font-weight:bold;">
-        <li class="chitiettl__li" style="padding:15px 15px">
-            <?php echo $row["tenchitiettl"]; ?>
-        </li>
+        <a class="chitiettl__a" href="index.php?pid=1&matl=<?php echo $row['matl'] ?>&machitiettl=<?php echo $row['machitiettl'] ?>">
+            <li class="chitiettl__li" style="padding:15px 15px">
+                <?php echo $row["tenchitiettl"]; ?>
+            </li>
         </a>
         <?php
         } 
@@ -51,23 +51,31 @@ while ($row = $result_theloai->fetch_assoc())
 </div>
 </div>
 
-<?php
-if ($result_chitiettheloai->num_rows > 0) {
-    while ($row = $result_sanpham->fetch_assoc()) {
-?>
-        <a class="sanpham__a" href="index.php?pid=8&masp=<?php echo $row['masp']; ?>" style="text-decoration:none;margin-left:60px;float:left;margin-top:60px">
-            <img class="sanpham__img" src="image/<?php echo $row['hinhanh']; ?>" ><br> <br> <br>
-            <span class="sanpham__content-main"  ><?php echo $row['tensp']; ?></span> <br>
-            <span class="sanpham__content" ><?php echo $row['mota']; ?></span> <br>
-            <span class="sanpham__content" ><?php echo $row['dongia']; ?>&nbsp;VNĐ</span> <br>
-            <span>
-                <button class="sanpham__button" onclick="button" style="min-width:100px;height:30px">Giỏ hàng</button>
-                <button class="sanpham__button" onclick="button" style="min-width:100px;height:30px">Mua ngay</button>
-            </span>
-        </a>
-<?php
+<div>
+    <?php
+    if ($result_chitiettheloai->num_rows > 0) {
+        while ($row = $result_sanpham->fetch_assoc()) {
+    ?>
+            <a  class="sanpham__a" target="blank" href="product_php/<?php echo $row['link']; ?>" style="text-decoration:none;margin-left:60px;float:left;margin-top:60px">
+                <img class="sanpham__img" src="image/<?php echo $row['hinhanh']; ?>" style="width:300px; height:200px" ><br> <br> <br>
+                <span class="sanpham__content-main"  ><?php echo $row['tensp']; ?></span> <br>
+                <span class="sanpham__content" ><?php echo $row['mota']; ?></span> <br>
+                <span class="sanpham__content" ><?php echo $row['dongia']; ?>&nbsp;VNĐ</span> <br>
+                <span>
+                    <input type="submit" name="submit__giohang" value="Giỏ hàng" style="min-width:100px;height:30px"> 
+                    <input type="submit" name="submit__muangay" value="Mua ngay" style="min-width:100px;height:30px"> 
+                </span>
+            </a>
+            
+    <?php
+        }
+    } else {
     }
-} else {
-}
-$link->close();
-?>
+    $link->close();
+    ?>
+</div>
+
+<script>
+    
+</script>
+
