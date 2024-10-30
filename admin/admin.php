@@ -42,15 +42,24 @@ session_start();
             } else {
                 $page_admin = $_GET['pid'];
                 switch ($page_admin) {
-                    case 1: include('src-quanli_php/quanlidonhang.php'); break;
-                    case 2: include('src-quanli_php/thongkeluotmua.php'); break;
-                    case 3: include('src-quanli_php/quanlisp.php'); break;
-                    case 4: include('src-quanli_php/themsp.php'); break;
-                    case 5: include('src-quanli_php/quanliuser.php'); break;
-                    case 6: include('src-quanli_php/chinhsuauser.php'); break;
-                    case 7: include('src-quanli_php/xoauser.php'); break;
-                    case 8: include('src-quanli_php/chinhsuasp.php'); break;
-                    case 9: include('src-quanli_php/xoasp.php'); break;
+                    case 1: include('src-quanli_php/quanlidonhang.php'); 
+                    break;
+                    case 2: include('src-quanli_php/thongkeluotmua.php'); 
+                    break;
+                    case 3: include('src-quanli_php/quanlisp.php'); 
+                    break;
+                    case 4: include('src-quanli_php/themsp.php'); 
+                    break;
+                    case 5: include('src-quanli_php/quanliuser.php'); 
+                    break;
+                    case 6: include('src-quanli_php/chinhsuauser.php'); 
+                    break;
+                    case 7: include('src-quanli_php/xoauser.php'); 
+                    break;
+                    case 8: include('src-quanli_php/chinhsuasp.php'); 
+                    break;
+                    case 9: include('src-quanli_php/xoasp.php'); 
+                    break;
                 }
             }
             ?>
@@ -63,4 +72,3 @@ session_start();
     ?>
 </body>
 </html>
-
