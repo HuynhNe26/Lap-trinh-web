@@ -98,9 +98,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
         $user = $result->fetch_assoc();
         // Xác thực mật khẩu
         if (password_verify($password, $user['matkhau'])) {
-            echo "<p style='color: green;'>Đăng nhập thành công! Xin chào, " . $user['hovaten'] . ".</p>";
             $_SESSION['username'] = $user['hovaten']; // Lưu tên vào session
-            header("Location: index.php");
+            $_SESSION['login_success'] = "Đăng nhập thành công"; // Lưu thông báo
+            header("Location: index.php"); // Chuyển hướng đến trang index
+            exit();
             // Chuyển hướng hoặc xử lý khi đăng nhập thành công
         } else {
             echo "<p style='color: red;'>Mật khẩu không chính xác!</p>";
@@ -116,5 +117,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
 
 </body>
 </html>
-
 
