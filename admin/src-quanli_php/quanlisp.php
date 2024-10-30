@@ -1,58 +1,82 @@
-<div class="main-content">
-    <h1>Quản lý sản phẩm</h1>
+<?php
+$conn = new mysqli("localhost", "root", "", "bmw_web");
+if ($conn->connect_error) {
+    die("Kết nối thất bại: " . $conn->connect_error);
+}
+$sql = "SELECT * FROM theloai, chitiettl, sanpham WHERE theloai.matl = chitiettl.matl AND chitiettl.machitiettl = sanpham.machitiettl";
+$result = $conn->query($sql);
+?>
 
-    <!-- Button to Add Product -->
-    <div class="button-container">
-        <a href="admin.php?pid=4" class="btn-add">Thêm sản phẩm</a>
-    </div>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
 
-    <!-- Products Table -->
-    <table class="products-table">
-        <thead>
+    <h2 style="text-align: center; padding:10px">Danh Sách Sản Phẩm</h2>
+    <?php if (isset($_SESSION['message'])): ?>
+        <p style="color: green;"><?php echo $_SESSION['message']; ?></p>
+        <?php unset($_SESSION['message']); // Xóa thông báo sau khi đã hiển thị ?>
+    <?php endif; ?>
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Thể loại</th>
+            <th>Chi tiết Thể loại</th>
+            <th>Hình ảnh</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Mô tả</th>
+            <th>Đơn giá</th>
+            <th>Chức năng</th>
+        </tr>
+
+        <?php if ($result->num_rows > 0): ?>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo $row['masp']; ?></td>
+                    <td><?php echo $row['tentl']; ?></td>
+                    <td><?php echo $row['tenchitiettl']; ?></td>
+                    <td>
+                        <img src="../image/<?php echo $row['hinhanh']; ?>" alt="<?php echo $row['tensp']; ?>" style="width:200px; height:120px; object-fit:cover;">
+                    </td>
+                    <td><?php echo $row['tensp']; ?></td>
+                    <td><?php echo $row['mota']; ?></td>
+                    <td><?php echo $row['dongia']; ?></td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="admin.php?pid=8&&id=<?php echo $row['masp']; ?>" style="border:1px solid blue; background-color:white; color:blue; padding:5px 10px; cursor:pointer; text-decoration:none;">
+                                Chỉnh sửa
+                            </a>
+                            <form action="admin.php?pid=9" method="POST" style="display:inline;" onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?');">
+                                <input type="hidden" name="id" value="<?php echo $row['masp']; ?>">
+                                <button type="submit" name="delete" style="border:1px solid red; background-color:white; color:red; padding:5px 10px; cursor:pointer;">
+                                    Xóa
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        <?php else: ?>
             <tr>
-                <th>ID</th>
-                <th>Tên sản phẩm</th>
-                <th>Giá (VNĐ)</th>
-                <th>Mô tả</th>
-                <th>Hình ảnh</th>
-                <th>Thao tác</th>
+                <td colspan="7">Không có sản phẩm nào.</td>
             </tr>
-        </thead>
-        <tbody>
-            <!-- Example data, replace with dynamic data from the backend -->
-            <tr>
-                <td>1</td>
-                <td>BMW 3 Series</td>
-                <td>1.529.000.000</td>
-                <td>Mẫu sedan thể thao sang trọng</td>
-                <td><img src="../image/BMW-3.webp" alt="BMW 3 Series" style="width: 60px; height: 40px;"></td>
-                <td>
-                    <a href="admin.php?pid=8" class="btn-edit">Sửa</a>
-                    <a href="admin.php?pid=9" class="btn-delete">Xóa</a>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>BMW i7</td>
-                <td>6.799.000.000</td>
-                <td>Xe điện sang trọng với công nghệ tiên tiến</td>
-                <td><img src="../image/BMW-i7.webp" alt="BMW i7" style="width: 60px; height: 40px;"></td>
-                <td>
-                    <a href="admin.php?pid=8" class="btn-edit">Sửa</a>
-                    <a href="admin.php?pid=9" class="btn-delete">Xóa</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>BMW XM</td>
-                <td>10.999.000.000</td>
-                <td>Xe SUV mạnh mẽ và tiện nghi</td>
-                <td><img src="../image/BMW-XM.webp" alt="BMW XM" style="width: 60px; height: 40px;"></td>
-                <td>
-                    <a href="admin.php?pid=8" class="btn-edit">Sửa</a>
-                    <a href="admin.php?pid=9" class="btn-delete">Xóa</a>
-                </td>
-            </tr>
-        </tbody>
+        <?php endif; ?>
     </table>
-</div>
+
+    <?php
+    $conn->close();
+    ?>
