@@ -1,3 +1,7 @@
+<?php
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +41,10 @@
         </header>
             <div>
             <?php
-                if(!isset($_GET['pid'])) {
-                    include('src_php/trangchu.php');
+                // Kiểm tra và hiển thị thông báo đăng nhập thành công
+                if (isset($_SESSION['login_success'])) {
+                    echo "<p style='color: green;'>" . htmlspecialchars($_SESSION['login_success']) . "</p>";
+                    unset($_SESSION['login_success']); // Xóa thông báo sau khi hiển thị
                 }
             else {
                 $pace=$_GET['pid'];
