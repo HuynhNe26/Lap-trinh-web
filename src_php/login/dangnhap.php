@@ -1,149 +1,120 @@
-
-<style>
-        /* General styling for form */
-form {
-    width: 100%;
-}
-
-/* Style the table */
-table {
-    width: 400px;
-    border: 2px solid var(--black-color);
-    margin-top: 40px;
-    margin-left: 500px;
-    height: 200px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Table headings */
-table td {
-    padding: 10px;
-}
-
-/* ĐĂNG NHẬP heading */
-table .dangnhap__td {
-    font-size: 17px;
-    font-weight: 600;
-}
-
-/* Input fields */
-.input__text .input__matkhau {
-    width: 390px;
-    height: 40px;
-    margin-top: 10px;
-    padding-left: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-/* Submit button */
-.input__login {
-    min-width: 300px;
-    height: 40px;
-    margin-top: 10px;
-    background-color: var(--black-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Submit button hover effect */
-.input__login:hover {
-    background-color: #333;
-}
-
-/* "Forget password?" link */
-a {
-    text-decoration: none;
-    color: var(--black-color);
-    font-size: 14px;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Remember me checkbox and label */
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-/* Register link */
-a[href*="dangki"] {
-    color: var(--black-color);
-    font-size: 14px;
-    font-weight: 600;
-    margin-left: 30px;
-}
-
-a[href*="dangki"]:hover {
-    text-decoration: underline;
-}
-
-/* Extra styling */
-.dangnhap__td {
-    margin-top: 10px;
-}
-
-
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <style>
+        .dangnhap {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            max-width: 90%;
+            text-align: center;
+            margin: auto;
+        }
+        .dangnhap h2 { 
+            color: #333; 
+            margin-bottom: 20px; 
+        }
+        .dangnhap-form { 
+            margin-bottom: 15px; 
+            text-align: left; 
+        }
+        .dangnhap-form-group label { 
+            display: block; 
+            font-weight: bold; 
+            color: #555; 
+            margin-bottom: 5px; 
+            margin-top: 10px; 
+        }
+        .dangnhap-form-group input { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+        }
+        .dangnhap-form-group button { 
+            width: 100%; 
+            padding: 10px; 
+            background-color: #007bff; 
+            color: white; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            margin-top: 10px; 
+        }
+        .dangnhap-form-group button:hover { 
+            background-color: #0056b3; 
+        }
     </style>
-<div>
-    <form action="index.php?pid=6&&page=dangnhap" method="post" style="width:100%">
-        <table style="width:400px; border:2px solid var(--black-color);margin-top:40px; margin-left:500px; height:200px ">
-            <tr>
-                <td colspan="2" style="text-align:center; font-size:17px; font-weight: 600">ĐĂNG NHẬP</td>
-            </tr>
-            <tr>
-                <td class="dangnhap__td" colspan="2">
-                    <div>Tên đăng nhập</div>
-                </td>
-            </tr>
-            <tr>
-                <td class="input__text" colspan="2">
-                    <input style="width:390px; height:40px; margin-top:10px" type="email" name="tendangki" placeholder="abcde@gmail.com" required>
-                </td>
-            </tr>
-            <tr>
-                <td class="dangnhap__td">
-                    <div style="margin-top:10px">Mật khẩu</div>
-                </td>
-                <td class="dangnhap__td">
-                    <div style="margin-left:160px; margin-top:10px">
-                        <a href="" style="text-decoration:none; color:var(--black-color); font-size:14px">Quên mật khẩu?</a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="input__matkhau" colspan="2">
-                    <input style="width:390px; height:40px;margin-top:10px" type="password" name="matkhaumoi" placeholder="Nhập mật khẩu..." required>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <div style="margin-top:10px">
-                        <input type="checkbox" name="checkbox"> Remember me
-                    </div>
-                </td>
-            </tr>
-            <br>
-            <tr>
-                <td colspan="2" style="text-align:center">
-                    <div>
-                        <input class="input__login" style="min-width:300px; height:40px" type="submit" value="Đăng nhập" required>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="index.php?pid=5&&page=dangki" style="color:var(--black-color); font-size:14px; margin-left:30px; font-weight:600">
-                        Đăng kí
-                    </a>    
-                </td>
-            </tr>
-        </table>
+</head>
+<body>
+
+<div class="dangnhap">
+    <h2>Đăng Nhập</h2>
+    <form class="dangnhap-form" method="POST" action="">
+        <div class="dangnhap-form-group">
+            <label for="username">Tên Đăng Nhập:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="dangnhap-form-group">
+            <label for="password">Mật Khẩu:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="dangnhap-form-group">
+            <button type="submit" name="login">Đăng Nhập</button>
+            <button>
+                <a style="text-decoration:none; color:white" href="index.php?pid=5">Đăng kí</a>
+            </button>
+        </div>
     </form>
 </div>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Kết nối đến cơ sở dữ liệu
+    $link = new mysqli("localhost", "root", "", "bmw_khachhang");
+
+    // Kiểm tra kết nối
+    if ($link->connect_error) {
+        die("Kết nối thất bại: " . $link->connect_error);
+    }
+
+    // Kiểm tra thông tin đăng nhập
+    $sql = "SELECT * FROM member_user WHERE tendangnhap = ?";
+    $stmt = $link->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        // Xác thực mật khẩu
+        if (password_verify($password, $user['matkhau'])) {
+            echo "<p style='color: green;'>Đăng nhập thành công! Xin chào, " . $user['hovaten'] . ".</p>";
+            $_SESSION['username'] = $user['hovaten']; // Lưu tên vào session
+            header("Location: index.php");
+            // Chuyển hướng hoặc xử lý khi đăng nhập thành công
+        } else {
+            echo "<p style='color: red;'>Mật khẩu không chính xác!</p>";
+        }
+    } else {
+        echo "<p style='color: red;'>Tên đăng nhập không tồn tại!</p>";
+    }
+
+    $stmt->close();
+    $link->close();
+}
+?>
+
+</body>
+</html>
+
+
