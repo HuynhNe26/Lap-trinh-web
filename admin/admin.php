@@ -65,8 +65,9 @@ session_start();
             ?>
         </div>
         <footer style="position:fixed; z-index:100">
-            <span>Xin chào <?php echo $_SESSION['hovaten_admin']; ?></span>
+            <marquee direction="right">Xin chào <?php echo $_SESSION['hovaten_admin']; ?>
         </footer>
+
     <?php
     }
     ?>
