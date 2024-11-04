@@ -299,7 +299,7 @@ if (count($product_ids) > 0) {
                 setTimeout(function() {
                     notification.style.display = 'none'; // Ẩn hoàn toàn sau khi chuyển đổi
                 }, 500); // Thời gian chờ để opacity chuyển đổi (0.5 giây)
-            }, 8000); // 8 giây
+            }, 5000); // 5 giây
         }
     });
 </script>
