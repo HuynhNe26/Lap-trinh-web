@@ -1,5 +1,9 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+
 $host = 'localhost'; // Thay đổi nếu cần
 $db = 'bmw_web'; // Thay thế bằng tên cơ sở dữ liệu của bạn
 $user = 'root'; // Thay thế bằng tên người dùng cơ sở dữ liệu của bạn
@@ -31,10 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['masp'])) {
     }
 }
 
-// Xử lý xóa sản phẩm
-if (isset($_GET['remove'])) {
-    $remove_masp = $_GET['remove'];
+// Xử lý xóa sản phẩm đây nè
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove'])) {
+    $remove_masp = $_POST['remove'];
     unset($_SESSION['cart'][$remove_masp]);
+    $_SESSION['message'] = "Sản phẩm đã được xóa khỏi giỏ hàng."; // Thông báo xóa thành công
+    header("Location: index.php?pid=8");
+    exit();
 }
 
 // Lấy thông tin sản phẩm từ cơ sở dữ liệu
@@ -57,6 +64,7 @@ if (count($product_ids) > 0) {
     $product_details = []; // Giỏ hàng trống
     $total_price = 0; // Tổng thành tiền
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -115,7 +123,7 @@ if (count($product_ids) > 0) {
         }
 
         .remove-button {
-            background-color: red;
+            background-color: blue;
             color: white;
             border: none;
             border-radius: 5px;
@@ -125,7 +133,7 @@ if (count($product_ids) > 0) {
         }
 
         .remove-button:hover {
-            background-color: darkred;
+            background-color: darkblue;
         }
 
         .total {
@@ -194,99 +202,107 @@ if (count($product_ids) > 0) {
             text-align: center;
             margin: 0 10px;
         }
+        
+        .notification {
+            background-color: rgba(97, 255, 144);
+            color: blanchedalmond;
+            font-size: 25px;
+            padding: 10px;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center; 
+            transition: opacity 0.5s ease;
+        }
+        
     </style>
 </head>
 <body>
 <div class="container">
         
-        <?php if (isset($_GET['message']) && $_GET['message'] === 'success'): ?>
-            <div class="notification" id="notification">Đặt hàng thành công! Cảm ơn bạn đã mua sắm.</div>
-        <?php endif; ?>
-    <div class="container">
-        <h1>Giỏ Hàng Của Bạn</h1>
-        <div class="product-list">
-            <?php if (count($product_details) > 0): ?>
-                <?php foreach ($product_details as $product): ?>
-                    <div class="product">
-                        <img style="padding-bottom: 20px;" src="<?php echo $product['hinhanh']; ?>" alt="<?php echo $product['tensp']; ?>">
-                        <h2 style="padding-bottom: 20px;"><?php echo $product['tensp']; ?></h2>
-                        <p style="padding-bottom: 20px;">Nhiên liệu: <?php echo $product['mota']; ?></p>
-                        <p style="padding-bottom: 20px;">Giá: <span class="price" data-price="<?php echo $product['dongia']; ?>"><?php echo number_format($product['dongia']); ?></span> VND</p>
-                        <div class="quantity-controls" style="padding-bottom: 20px;">
-                            <button class="decrease-quantity" data-id="<?php echo $product['masp']; ?>">-</button>
-                            <input type="number" class="quantity-input" value="<?php echo $product['quantity']; ?>" data-id="<?php echo $product['masp']; ?>" min="1">
-                            <button class="increase-quantity" data-id="<?php echo $product['masp']; ?>">+</button>
-                        </div>
-                        <p class="product-total" style="padding-bottom: 20px; font-weight:bold">Thành tiền: <span id="total-<?php echo $product['masp']; ?>"><?php echo number_format($product['dongia'] * $product['quantity']); ?></span> VND</p>
-                        <form style="padding-bottom: 20px;" method="get" action="">
-                            <input type="hidden" name="remove" value="<?php echo $product['masp']; ?>">
-                            <button type="submit" class="remove-button">Xóa</button>
-                        </form>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p >Giỏ hàng của bạn hiện đang trống.</p> 
-                <a style="padding: 10px 40px; background-color:#007bff;text-decoration: none; text-align: center; float: left; font-weight: bold; margin-top:30px" href="index.php?pid=11">Tiếp tục mua sắm</a>
-            <?php endif; ?>
-        </div>
-
+    <?php if (isset($_SESSION['message'])): ?>
+        <div class="notification" id="notification"><?php echo htmlspecialchars($_SESSION['message']); ?></div>
+        <?php unset($_SESSION['message']); // Xóa thông báo sau khi hiển thị ?>
+    <?php endif; ?>
+    
+    <h1>Giỏ Hàng Của Bạn</h1>
+    <div class="product-list">
         <?php if (count($product_details) > 0): ?>
-            <div style="font-weight: bold;" class="total">
-                Tổng thành tiền: <span id="total-price"><?php echo number_format($total_price); ?></span> VND
-            </div>
-            <form action="" method="post">
-                <button type="submit" class="checkout-button">Đặt hàng</button>
-            </form>
-            <a href="index.php?pid=11" class="continue-shopping">Tiếp tục mua sắm</a> 
+            <?php foreach ($product_details as $product): ?>
+                <div class="product">
+                    <img style="padding-bottom: 20px;" src="<?php echo $product['hinhanh']; ?>" alt="<?php echo $product['tensp']; ?>">
+                    <h2 style="padding-bottom: 20px;"><?php echo $product['tensp']; ?></h2>
+                    <p style="padding-bottom: 20px;">Nhiên liệu: <?php echo $product['mota']; ?></p>
+                    <p style="padding-bottom: 20px;">Giá: <span class="price" data-price="<?php echo $product['dongia']; ?>"><?php echo number_format($product['dongia']); ?></span> VND</p>
+                    <div class="quantity-controls" style="padding-bottom: 20px;">
+                        <button class="decrease-quantity" data-id="<?php echo $product['masp']; ?>">-</button>
+                        <input type="number" class="quantity-input" value="<?php echo $product['quantity']; ?>" data-id="<?php echo $product['masp']; ?>" min="1">
+                        <button class="increase-quantity" data-id="<?php echo $product['masp']; ?>">+</button>
+                    </div>
+                    <p class="product-total" style="padding-bottom: 20px; font-weight:bold">Thành tiền: <span id="total-<?php echo $product['masp']; ?>"><?php echo number_format($product['dongia'] * $product['quantity']); ?></span> VND</p>
+                    <form style="padding-bottom: 20px;" method="post" action="index.php?pid=8">
+                        <input type="hidden" name="remove" value="<?php echo $product['masp']; ?>">
+                        <button type="submit" class="remove-button">Xóa</button>
+                    </form>
+                </div>
+            <?php endforeach; ?>
+            <p class="total">Tổng thành tiền: <?php echo number_format($total_price); ?> VND</p>
+        <?php else: ?>
+            <p>Giỏ hàng của bạn đang trống.</p>
         <?php endif; ?>
     </div>
+    
+    <form method="post" action="checkout.php">
+        <button type="submit" class="checkout-button">Thanh toán</button>
+    </form>
+    
+    <a href="index.php?pid=11" class="continue-shopping">Tiếp tục mua sắm</a>
+</div>
 
-    <script>
-        function updateTotalPrice(productId, quantity) {
-            const price = parseInt(document.querySelector(`.price[data-price]`).getAttribute('data-price'));
-            const total = price * quantity;
-            document.getElementById(`total-${productId}`).innerText = total.toLocaleString('vi-VN');
-            return total;
-        }
+<script>
+    document.querySelectorAll('.increase-quantity').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.dataset.id;
+            const quantityInput = document.querySelector(`.quantity-input[data-id="${productId}"]`);
+            let quantity = parseInt(quantityInput.value);
+            quantityInput.value = ++quantity;
 
-        function updateOverallTotalPrice() {
-            let totalPrice = 0;
-            document.querySelectorAll('.product').forEach(product => {
-                const quantity = parseInt(product.querySelector('.quantity-input').value);
-                const productId = product.querySelector('.quantity-input').getAttribute('data-id');
-                totalPrice += updateTotalPrice(productId, quantity);
-            });
-            document.getElementById('total-price').innerText = totalPrice.toLocaleString('vi-VN');
-        }
-
-        document.querySelectorAll('.increase-quantity').forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.getAttribute('data-id');
-                const quantityInput = document.querySelector(`.quantity-input[data-id="${productId}"]`);
-                quantityInput.value = parseInt(quantityInput.value) + 1;
-                updateOverallTotalPrice();
-            });
+            updateTotalPrice(productId, quantity);
         });
+    });
 
-        document.querySelectorAll('.decrease-quantity').forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.getAttribute('data-id');
-                const quantityInput = document.querySelector(`.quantity-input[data-id="${productId}"]`);
-                if (parseInt(quantityInput.value) > 1) {
-                    quantityInput.value = parseInt(quantityInput.value) - 1;
-                    updateOverallTotalPrice();
-                }
-            });
-        });
-
-        document.querySelectorAll('.quantity-input').forEach(input => {
-            input.addEventListener('change', () => {
-                const productId = input.getAttribute('data-id');
-                const quantity = parseInt(input.value);
+    document.querySelectorAll('.decrease-quantity').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.dataset.id;
+            const quantityInput = document.querySelector(`.quantity-input[data-id="${productId}"]`);
+            let quantity = parseInt(quantityInput.value);
+            if (quantity > 1) {
+                quantityInput.value = --quantity;
                 updateTotalPrice(productId, quantity);
-                updateOverallTotalPrice();
-            });
+            }
         });
-    </script>
+    });
+
+    function updateTotalPrice(productId, quantity) {
+        const price = parseFloat(document.querySelector(`.price[data-price="${productId}"]`).dataset.price);
+        const total = price * quantity;
+        document.getElementById(`total-${productId}`).textContent = new Intl.NumberFormat().format(total);
+    }
+     // Kiểm tra nếu thông báo tồn tại
+     document.addEventListener("DOMContentLoaded", function() {
+        // Kiểm tra xem thông báo có tồn tại không
+        var notification = document.getElementById('notification');
+        if (notification) {
+            // Đặt thời gian tự động ẩn thông báo sau 10 giây
+            setTimeout(function() {
+                notification.style.opacity = '0'; // Đổi opacity thành 0
+                setTimeout(function() {
+                    notification.style.display = 'none'; // Ẩn hoàn toàn sau khi chuyển đổi
+                }, 500); // Thời gian chờ để opacity chuyển đổi (0.5 giây)
+            }, 8000); // 8 giây
+        }
+    });
+</script>
+
 </body>
 </html>
