@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: trangchu.php");
+header("Location: /project_webBMW/index.php");
 exit();
 
