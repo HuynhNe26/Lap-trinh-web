@@ -3,6 +3,16 @@ $link = new mysqli("localhost", "root", "", "bmw_web");
 if ($link->connect_error) {
     die("Connection failed: " . $link->connect_error);
 }
+//PHÂN TRANG SẢN PHẨM NÈ :3//
+if (!isset($_GET['p'])) {
+    $p = 1;
+}
+else {
+    $p = intval($_GET['p']);
+}
+$sosp = 4; 
+$x = ($p - 1) * $sosp;
+//TỚI ĐÂY AH//
 $sql_theloai = "select * from theloai";
 $result_theloai = $link->query($sql_theloai);
 
@@ -13,6 +23,12 @@ $result_chitiettheloai = $link->query($sql_chitiettheloai);
 $chitiettheloai = isset($_GET['machitiettl']) ? (int)$_GET['machitiettl'] : 0;
 $sql_sanpham = "select * from sanpham where machitiettl='$chitiettheloai'";
 $result_sanpham = $link->query($sql_sanpham);
+//CÒN NÈ, KHÚC NÀY LÀ ĐẾM TỔNG SP PHÂN TRANG TRUY VẤN NHA//
+$sql_count = "SELECT COUNT(*) as total FROM sanpham WHERE machitiettl='$chitiettheloai'";
+$count_result = $link->query($sql_count);
+$row_count = $count_result->fetch_assoc();
+$total_records = $row_count['total'];
+$tongsotrang = ceil($total_records / $sosp);
 ?>
 
 <div style="text-align:center;margin-top:75px">
@@ -74,7 +90,20 @@ while ($row = $result_theloai->fetch_assoc())
     $link->close();
     ?>
 </div>
-
+//THÊM 1 KHÚC NỮA NHA//
+<div style="margin:auto; clear:both; text-align:center; color:dimgray; padding-top:50px">
+    <?php
+    for ($i = 1; $i <= $tongsotrang; $i++) {
+        if ($i == $p) {
+            echo "<b style='padding:3px; text-decoration: underline; color:black'>" . $i . "</b>&nbsp;";
+        } 
+        else {
+            echo "<a style='padding:3px; text-decoration: none; color:dimagray;' href='index.php?pid=1&matl=" . $theloai . "&machitiettl=" . $chitiettheloai . "&p=" . $i . "'>" . $i . "</a>&nbsp;";
+        }
+    }
+    ?>
+</div>
+//TỚI ĐÂY HẾT RUI//
 <script>
     
 </script>
