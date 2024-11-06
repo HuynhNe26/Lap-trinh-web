@@ -137,10 +137,18 @@ if (count($product_ids) > 0) {
         }
 
         .total {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
             font-size: 20px;
-            margin-top: 20px;
-            text-align: right;
+            border-top: 2px solid #ccc;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
+
 
         .checkout-button {
             display: block;
@@ -233,7 +241,7 @@ if (count($product_ids) > 0) {
                     <img style="padding-bottom: 20px;" src="<?php echo $product['hinhanh']; ?>" alt="<?php echo $product['tensp']; ?>">
                     <h2 style="padding-bottom: 20px;"><?php echo $product['tensp']; ?></h2>
                     <p style="padding-bottom: 20px;">Nhiên liệu: <?php echo $product['mota']; ?></p>
-                    <p style="padding-bottom: 20px;">Giá: <span class="price" data-price="<?php echo $product['dongia']; ?>"><?php echo number_format($product['dongia']); ?></span> VND</p>
+                    <p style="padding-bottom: 20px;">Giá: <span class="price" data-id="<?php echo $product['masp']; ?>" data-price="<?php echo $product['dongia']; ?>"><?php echo number_format($product['dongia']); ?></span> VND</p>
                     <div class="quantity-controls" style="padding-bottom: 20px;">
                         <button class="decrease-quantity" data-id="<?php echo $product['masp']; ?>">-</button>
                         <input type="number" class="quantity-input" value="<?php echo $product['quantity']; ?>" data-id="<?php echo $product['masp']; ?>" min="1">
@@ -261,39 +269,53 @@ if (count($product_ids) > 0) {
 
 <script>
     document.querySelectorAll('.increase-quantity').forEach(button => {
-        button.addEventListener('click', function() {
-            const productId = this.dataset.id;
-            const quantityInput = document.querySelector(`.quantity-input[data-id="${productId}"]`);
-            let quantity = parseInt(quantityInput.value);
-            quantityInput.value = ++quantity;
+    button.addEventListener('click', function() {
+        const productId = this.dataset.id;
+        const quantityInput = document.querySelector(`.quantity-input[data-id="${productId}"]`);
+        let quantity = parseInt(quantityInput.value);
+        quantityInput.value = ++quantity;
 
-            updateTotalPrice(productId, quantity);
-        });
+        updateTotalPrice();
+    });
+});
+
+document.querySelectorAll('.decrease-quantity').forEach(button => {
+    button.addEventListener('click', function() {
+        const productId = this.dataset.id;
+        const quantityInput = document.querySelector(`.quantity-input[data-id="${productId}"]`);
+        let quantity = parseInt(quantityInput.value);
+        if (quantity > 1) {
+            quantityInput.value = --quantity;
+            updateTotalPrice();
+        }
+    });
+});
+
+function updateTotalPrice() {
+    let totalPrice = 0;
+
+    // Duyệt qua tất cả các sản phẩm trong giỏ hàng và tính tổng
+    document.querySelectorAll('.product').forEach(product => {
+        const productId = product.querySelector('.price').dataset.id;
+        const quantity = parseInt(document.querySelector(`.quantity-input[data-id="${productId}"]`).value);
+        const price = parseFloat(document.querySelector(`.price[data-id="${productId}"]`).dataset.price);
+        totalPrice += price * quantity;
+
+        // Cập nhật giá trị thành tiền của sản phẩm
+        document.getElementById(`total-${productId}`).textContent = new Intl.NumberFormat().format(price * quantity);
     });
 
-    document.querySelectorAll('.decrease-quantity').forEach(button => {
-        button.addEventListener('click', function() {
-            const productId = this.dataset.id;
-            const quantityInput = document.querySelector(`.quantity-input[data-id="${productId}"]`);
-            let quantity = parseInt(quantityInput.value);
-            if (quantity > 1) {
-                quantityInput.value = --quantity;
-                updateTotalPrice(productId, quantity);
-            }
-        });
-    });
+    // Cập nhật tổng thành tiền ở dưới cùng
+    document.querySelector('.total').textContent = 'Tổng thành tiền: ' + new Intl.NumberFormat().format(totalPrice) + ' VND';
+}
 
-    function updateTotalPrice(productId, quantity) {
-        const price = parseFloat(document.querySelector(`.price[data-price="${productId}"]`).dataset.price);
-        const total = price * quantity;
-        document.getElementById(`total-${productId}`).textContent = new Intl.NumberFormat().format(total);
-    }
+
      // Kiểm tra nếu thông báo tồn tại
      document.addEventListener("DOMContentLoaded", function() {
         // Kiểm tra xem thông báo có tồn tại không
         var notification = document.getElementById('notification');
         if (notification) {
-            // Đặt thời gian tự động ẩn thông báo sau 10 giây
+            // Đặt thời gian tự động ẩn thông báo sau 5 giây
             setTimeout(function() {
                 notification.style.opacity = '0'; // Đổi opacity thành 0
                 setTimeout(function() {
