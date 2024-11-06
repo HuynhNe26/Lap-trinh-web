@@ -61,6 +61,8 @@ session_start();
                 case 9: include('src_php/datxe-infor.php'); break;
                 case 10: include('src_php/xacnhan-datxe.php'); break;
                 case 11: include('src_php/check-giohang.php'); break;
+                case 12: include('src_php/thongtinuser.php'); break;
+                case 13: include('src_php/thanhtoan.php'); break;
             }
             ?>
         </div>
