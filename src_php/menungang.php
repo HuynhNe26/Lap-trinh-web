@@ -1,4 +1,5 @@
 <?php
+ob_start();
 $link = new mysqli('localhost', 'root', '', 'bmw_web');
 if ($link->connect_error) {
     die("Kết nối thất bại: " . $link->connect_error);
