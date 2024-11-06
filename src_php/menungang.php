@@ -20,8 +20,8 @@ if (!$result_timkiem) {
         <a class="menungang__a" href="index.php?pid=3">LIÊN HỆ</a>
         <a class="menungang__a" href="index.php?pid=4">ĐẶT XE</a>
     </div>
-    <div style="margin-left: 50px; margin-top: 5px; flex-grow: 1;">
-        <form action="index.php?pid=7" method="post" style="display: inline-flex; width: 100%;">
+    <div style="margin-left: 220px; margin-top: 5px;">
+        <form class="menungang__form" action="index.php?pid=7" method="post" style="display: flex; width: 100%;">
             <select name="timkiem" class="menungang__select" required>
                 <option value="">Vui lòng chọn loại xe cần tìm!</option>
                 <?php while ($row = $result_timkiem->fetch_assoc()): ?>
@@ -38,8 +38,8 @@ if (!$result_timkiem) {
     </div>
     <div style="margin-left: 10px; margin-top: 10px">
         <?php if (isset($_SESSION['username'])): ?>
-    <span>Xin chào, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
-    <a class="menungang__a" href="src_php/login/dangxuat.php">Đăng xuất</a>
+    <a class="menungang__a" href="index.php?pid=12" style="font-size:14px; text-decoration:none"><?php echo htmlspecialchars($_SESSION['username']); ?></a>
+    <a class="menungang__a" href="src_php/login/dangxuat.php">ĐĂNG XUẤT</a>
 <?php else: ?>
     <a class="menungang__a" href="index.php?pid=6&page=dangnhap">ĐĂNG NHẬP</a>
 <?php endif; ?>
