@@ -233,7 +233,7 @@ if (count($product_ids) > 0) {
         <?php unset($_SESSION['message']); // Xóa thông báo sau khi hiển thị ?>
     <?php endif; ?>
     
-    <h1>Giỏ Hàng Của Bạn</h1>
+    <h1>Giỏ Hàng</h1>
     <div class="product-list">
         <?php if (count($product_details) > 0): ?>
             <?php foreach ($product_details as $product): ?>
@@ -256,11 +256,11 @@ if (count($product_ids) > 0) {
             <?php endforeach; ?>
             <p class="total">Tổng thành tiền: <?php echo number_format($total_price); ?> VND</p>
         <?php else: ?>
-            <p>Giỏ hàng của bạn đang trống.</p>
+            <p style="font-size:15px">Giỏ hàng của bạn đang trống</p>
         <?php endif; ?>
     </div>
     
-    <form method="post" action="checkout.php">
+    <form method="post" action="index.php?pid=13">
         <button type="submit" class="checkout-button">Thanh toán</button>
     </form>
     
