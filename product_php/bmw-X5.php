@@ -20,7 +20,7 @@ img {
   display: block;
 }
 #headerx6 {
-  background-image: url(./image-BMWX5/bmw-x5-overview.webp);
+  background-image: url(./image/bmw-x5-overview.webp);
   background-repeat: no-repeat;
   background-size: auto;
 }
@@ -377,7 +377,7 @@ img {
         <h1 class="thietkenoibatx6">NÂNG CẤP CÁC TÍNH NĂNG TIỆN NGHI TRÊN BMW X5 MỚI.</h1>
         <div id="ngoaithatx6">
           <div class="motax6">
-            <img src="./image-BMWX5/the_x5_40i_xline_01226.webp" />
+            <img src="./image/the_x5_40i_xline_01226.webp" />
             <div class="textx6">
               <h1>Hệ thống âm thanh Harman Kardon Surround Sound.</h1>
               <p>
@@ -386,7 +386,7 @@ img {
             </div>
           </div>
           <div class="motax6">
-            <img src="./image-BMWX5/the_x5_40i_msport_01413.webp" />
+            <img src="./image/the_x5_40i_msport_01413.webp" />
             <div class="textx6">
               <h1>Cửa sổ trời toàn cảnh Panorama.</h1>
               <p>
@@ -395,7 +395,7 @@ img {
             </div>
           </div>
           <div class="motax6">
-            <img src="./image-BMWX5/di22_000106021.webp" />
+            <img src="./image/di22_000106021.webp" />
             <div class="textx6">
               <h1>Đèn viền nội thất</h1>
               <p>
@@ -409,7 +409,7 @@ img {
           <h2 class="BMWWx6">BMW X5 mới được nâng cấp toàn diện về kiểu dáng bên ngoài, thiết kế bên trong, trang bị tiện nghi, khả năng vận hành và các tính năng an toàn.</h2>
           <div id="Originalx6">
             <div class="gioithieux6">
-              <img src="./image-BMWX5/di22_000106057.webp" />
+              <img src="./image/di22_000106057.webp" />
               <div class="tieudex6">
                 <h1>Thiết kế đầu xe.</h1>
                 <p>
@@ -418,7 +418,7 @@ img {
               </div>
             </div>
             <div class="gioithieux6">
-              <img src="./image-BMWX5/di22_000106056.webp" />
+              <img src="./image/di22_000106056.webp" />
               <div class="tieudex6">
                 <h1>Thiết kế đuôi xe.</h1>
                 <p>
@@ -427,7 +427,7 @@ img {
               </div>
             </div>
             <div class="gioithieux6">
-              <img src="./image-BMWX5/di22_000106045.webp" />
+              <img src="./image/di22_000106045.webp" />
               <div class="tieudex6">
                 <h1>Cốp sau dạng vỏ sò.</h1>
                 <p>
@@ -441,7 +441,7 @@ img {
           <h2 class="BMWWx6" >Hệ thống vận hành của BMW X5 mới nổi bật với sự êm ái, mạnh mẽ, giảm lượng phát thải CO2 và tiết kiệm nhiên liệu cho chủ nhân sử dụng, yên tâm trong mọi hành trình.</h2>
           <div id="Originalx6">
             <div class="gioithieux6">
-              <img src="./image-BMWX5/di22_000108686.webp" />
+              <img src="./image/di22_000108686.webp" />
               <div class="tieudex6">
                 <h1>Hệ thống hỗ trợ vận hành MILD HYBRID</h1>
                 <p>
@@ -450,7 +450,7 @@ img {
               </div>
             </div>
             <div class="gioithieux6">
-              <img src="./image-BMWX5/di22_000108689.webp" />
+              <img src="./image/di22_000108689.webp" />
               <div class="tieudex6">
                 <h1>Hệ thống khung gầm</h1>
                 <p>
@@ -459,7 +459,7 @@ img {
               </div>
             </div>
             <div class="gioithieux6">
-              <img src="./image-BMWX5/di22_000108681.webp" />
+              <img src="./image/di22_000108681.webp" />
               <div class="tieudex6">
                 <h1>Hệ thống BMW xDrive</h1>
                 <p>
@@ -474,7 +474,7 @@ img {
           font-weight: 300;
           margin-left: 30px;">THÔNG SỐ KĨ THUẬT</h1>
           <h3 style="font-size: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 200; margin-left: 30px;">BMW X5 xDrive40i</h3></div>
-          <div> <img src="./image-BMWX5/bmw_x_series_x5_mb.webp"> </div>
+          <div> <img src="./image/bmw_x_series_x5_mb.webp"> </div>
           <div>
           <table class="bangkithuatx6">
             <tr>
