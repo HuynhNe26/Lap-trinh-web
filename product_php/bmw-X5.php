@@ -20,7 +20,7 @@ img {
   display: block;
 }
 #headerx6 {
-  background-image: url(./image/bmw-x5-overview.webp);
+  background-image: url(./image-BMWX5/bmw-x5-overview.webp);
   background-repeat: no-repeat;
   background-size: auto;
 }
@@ -331,12 +331,13 @@ img {
   font-weight: bold;
 }
 
-
+  
     </style>
     <style>html {
       scroll-behavior: smooth;
     }</style>
     <title>BMW X5 | BMW Việt Nam</title>
+    <link rel="icon" href="../image/Logo.png">
   </head>
   <body class="x6">
     
