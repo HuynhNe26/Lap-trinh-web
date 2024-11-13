@@ -20,7 +20,7 @@ img {
   display: block;
 }
 #headerx6 {
-  background-image: url(./image-BMWX5/bmw-x5-overview.webp);
+  background-image: url(./image/bmw-x5-overview.webp);
   background-repeat: no-repeat;
   background-size: auto;
 }
