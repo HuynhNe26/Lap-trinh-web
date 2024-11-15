@@ -63,6 +63,10 @@ session_start();
                 case 11: include('src_php/check-giohang.php'); break;
                 case 12: include('src_php/thongtinuser.php'); break;
                 case 13: include('src_php/thanhtoan.php'); break;
+                case 14: include('src_php/tienhanhthanhtoan.php'); break;
+                case 15: include('src_php/thongbao.php'); break;
+                case 16: include('src_php/bill.php'); break;
+                
             }
             ?>
         </div>
