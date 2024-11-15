@@ -13,7 +13,7 @@
             width: 400px; 
             max-width: 90%; 
             text-align: center; 
-            margin: auto; /* Center the form */
+            margin: auto;
         }
 
         .dangki h2 { 
@@ -95,7 +95,11 @@
         </div>
         <div class="dangki-form">
             <label for="address">Địa chỉ:</label>
-            <textarea id="address" name="address" required></textarea>
+            <textarea id="address" name="address" placeholder="Vui lòng nhập rõ địa chỉ chính xác để giao hàng chính xác" required></textarea>
+        </div>
+        <div class="dangki-form">
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" id="phone" name="phone" required>
         </div>
         <div class="dangki-form">
             <button type="submit" name="register">Đăng Ký</button>
@@ -111,17 +115,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $date = $_POST['date'];
     $gioitinh = $_POST['gioitinh'];
     $address = $_POST['address'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Mã hóa mật khẩu
+    $phone = $_POST['phone']; 
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
 
-    // Kết nối đến cơ sở dữ liệu
-    $link = new mysqli("localhost", "root", "", "bmw_khachhang");
+    
+    $link = new mysqli("localhost", "root", "", "bmw_chung");
 
-    // Kiểm tra kết nối
     if ($link->connect_error) {
         die("Kết nối thất bại: " . $link->connect_error);
     }
 
-    // Kiểm tra xem tên đăng nhập hoặc email đã tồn tại chưa
+   
     $checkQuery = "SELECT * FROM member_user WHERE tendangnhap = ? OR email = ?";
     $stmt = $link->prepare($checkQuery);
     $stmt->bind_param("ss", $username, $email);
@@ -131,13 +135,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     if ($result->num_rows > 0) {
         echo "<p style='color: red;'>Tên đăng nhập hoặc email đã tồn tại!</p>";
     } else {
-        // Thêm thành viên mới vào cơ sở dữ liệu
-        $sql = "INSERT INTO member_user (tendangnhap, matkhau, hovaten, email, ngaysinh, gioitinh, diachi) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        
+        $sql = "INSERT INTO member_user (tendangnhap, matkhau, hovaten, email, ngaysinh, gioitinh, diachi, sodienthoai) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $link->prepare($sql);
-        $stmt->bind_param("sssssss", $username, $password, $name, $email, $date, $gioitinh, $address);
+        $stmt->bind_param("ssssssss", $username, $password, $name, $email, $date, $gioitinh, $address, $phone);
 
         if ($stmt->execute()) {
-            echo "<p style='color: green;'>Đăng ký thành công!</p>";
+            
+            echo "<p style='color: green;'>Đăng ký thành công! Bạn sẽ được chuyển đến trang đăng nhập.</p>";
+            header("Location: index.php?pid=6"); 
+            exit();
         } else {
             echo "<p style='color: red;'>Lỗi: " . $stmt->error . "</p>";
         }
