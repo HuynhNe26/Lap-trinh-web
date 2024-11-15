@@ -1,3 +1,49 @@
+<?php
+
+
+
+$link = new mysqli("localhost", "root", "", "bmw_chung");
+
+if ($link->connect_error) {
+    die("Kết nối thất bại: " . $link->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    
+    $sql = "SELECT * FROM member_user WHERE tendangnhap = ?";
+    $stmt = $link->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        
+        if (password_verify($password, $user['matkhau'])) {
+           
+            $_SESSION['user_id'] = $user['makhachhang']; 
+            $_SESSION['username'] = $user['hovaten'];
+            $_SESSION['email'] = $user['email']; 
+            $_SESSION['address'] = $user['diachi']; 
+            $_SESSION['phone'] = $user['sodienthoai']; 
+            $_SESSION['login_success'] = "Đăng nhập thành công"; 
+            header("Location: index.php"); 
+            exit();
+        } else {
+            echo "<p style='color: red;'>Mật khẩu không chính xác!</p>";
+        }
+    } else {
+        echo "<p style='color: red;'>Tên đăng nhập không tồn tại!</p>";
+    }
+
+    $stmt->close();
+    $link->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -50,6 +96,16 @@
         .dangnhap-form-group button:hover { 
             background-color: #0056b3; 
         }
+        .dangnhap-form-group a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .dangnhap-form-group a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -67,53 +123,10 @@
         </div>
         <div class="dangnhap-form-group">
             <button type="submit" name="login">Đăng Nhập</button>
-            <button>
-                <a style="text-decoration:none; color:white" href="index.php?pid=5">Đăng kí</a>
-            </button>
+            <a href="index.php?pid=5">Đăng kí</a>
         </div>
     </form>
 </div>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // Kết nối đến cơ sở dữ liệu
-    $link = new mysqli("localhost", "root", "", "bmw_khachhang");
-
-    // Kiểm tra kết nối
-    if ($link->connect_error) {
-        die("Kết nối thất bại: " . $link->connect_error);
-    }
-
-    // Kiểm tra thông tin đăng nhập
-    $sql = "SELECT * FROM member_user WHERE tendangnhap = ?";
-    $stmt = $link->prepare($sql);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        // Xác thực mật khẩu
-        if (password_verify($password, $user['matkhau'])) {
-            $_SESSION['username'] = $user['hovaten']; // Lưu tên vào session
-            $_SESSION['login_success'] = "Đăng nhập thành công"; // Lưu thông báo
-            header("Location:index.php"); // Chuyển hướng đến trang index
-            exit();
-            // Chuyển hướng hoặc xử lý khi đăng nhập thành công
-        } else {
-            echo "<p style='color: red;'>Mật khẩu không chính xác!</p>";
-        }
-    } else {
-        echo "<p style='color: red;'>Tên đăng nhập không tồn tại!</p>";
-    }
-
-    $stmt->close();
-    $link->close();
-}
-?>
 
 </body>
 </html>
