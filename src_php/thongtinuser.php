@@ -58,24 +58,23 @@ $row = $result_thongtinkhachhang->fetch_assoc();
     background-color: #45a049;
   }
 </style>
+    <div class="form_out" style="display:flex; flex-direction:column; max-width:100%; align-items:center">
+          <h1 style="font-size: 35px; color:lavender">THÔNG TIN CỦA <?php echo $_SESSION['username'] ?></h1>
 
-   <div class="form_out" style="display:flex; flex-direction:column; max-width:100%; align-items:center">
-        <h1 style="font-size: 35px; color:lavender">THÔNG TIN CỦA <?php echo $_SESSION['username'] ?></h1>
-
-        <form class="chinhsuathongtinuser" action="dangkilt.php" method="post">
-            <legend for="name">Họ và tên</legend>
-            <input type="text" name="<?php $row['hovaten'] ?>" readonly> <br>
-            <legend for="name">Họ*</legend>
-            <input type="text" required> <br>
-            <legend for="number">Số điện thoại*</legend>
-            <input type="number"> <br>
-            <legend for="email">Email*</legend>
-            <input type="text" required> <br>
-            <legend for="province">Thành phố/Tỉnh*</legend>
-            <input type="submit" class="nut-xacnhan" name="submit" value="Gửi liên hệ">
-                        </form>
+          <form class="chinhsuathongtinuser" action="index.php?pid=14" method="post" enctype="multipart/form-data">
+              <legend for="name">Họ và tên</legend>
+              <input type="text" value="<?php echo $row['hovaten'] ?>" readonly> <br>
+              <legend for="name">Email</legend>
+              <input type="text" value="<?php echo $row['email'] ?>" readonly> <br>
+              <legend for="number">Ngày sinh</legend>
+              <input type="text" value="<?php echo $row['ngaysinh'] ?>" readonly> <br>
+              <legend for="email">Giới tính</legend>
+              <input type="text" value="<?php echo $row['gioitinh'] ?>" readonly> <br>
+              <legend for="province">Địa chỉ</legend>
+              <input type="text" value="<?php echo $row['diachi'] ?>" readonly> <br>
+              <input type="submit" class="nut-xacnhan" name="submit" value="Chỉnh sửa thông tin">
+          </form>
     </div>
-
 <?php
 }
 ?>
