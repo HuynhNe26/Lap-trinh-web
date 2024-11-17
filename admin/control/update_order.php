@@ -27,6 +27,6 @@ if ($stmt->affected_rows > 0) {
 }
 
 // Chuyển hướng quay lại trang trước hoặc trang danh sách đơn hàng
-header("Location: order_list.php");
+header("Location: quanlidonhang.php");
 exit();
 ?>
