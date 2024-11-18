@@ -6,6 +6,8 @@ CREATE TABLE memember_admin (
     PRIMARY KEY (tendangnhap)
 );
 
+ALTER TABLE memember_admin AUTO_INCREMENT = 1;
+
 INSERT INTO memember_admin (tendangnhap, hovaten, matkhau, quyen) 
 VALUES 
 ('hoanghuynh','Hoàng Huynh','1234',1),
