@@ -20,24 +20,14 @@ if ($result->num_rows > 0) {
                 <th>Trạng Thái</th>
                 <th>Hành Động</th>
             </tr>";
-    while($row = $result->fetch_assoc()) {
+while($row = $result->fetch_assoc()) {
         echo "
         <tr>
             <td>{$row['don_hang_id']}</td>
             <td>{$row['hovaten']}</td>
             <td>{$row['email']}</td>
             <td>{$row['tongtien']}</td>
-            <td>";
-                if($row['trangthai'] == 'Đang chờ') {
-                    echo "Đang chờ";
-                } elseif ($row['trangthai'] == 'Xác nhận') {
-                    echo "Xác nhận";
-                } elseif ($row['trangthai'] == 'Đang giao') {
-                    echo "Đang giao";
-                } else {
-                    echo $row['trangthai'];
-                }
-            echo "</td>
+            <td>{$row['trangthai']}</td>
             <td>
                 <a href='update_order.php?don_hang_id={$row['don_hang_id']}&status=confirmed' class='confirm-btn'>Xác nhận</a>
                 <a href='update_order.php?don_hang_id={$row['don_hang_id']}&status=delivered' class='deliver-btn'>Đang giao</a>
