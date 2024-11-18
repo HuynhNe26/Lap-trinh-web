@@ -11,7 +11,7 @@ $result = $link->query($sql);
     <p>Danh sách các đơn hàng hiện tại:</p>
     <?php
 if ($result->num_rows > 0) {
-    echo "<table border='1'>
+    echo "<table class='table'>
             <tr>
                 <th>ID Đơn Hàng</th>
                 <th>Họ và Tên</th>
@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
                 <th>Trạng Thái</th>
                 <th>Hành Động</th>
             </tr>";
-while($row = $result->fetch_assoc()) {
+    while($row = $result->fetch_assoc()) {
         echo "
         <tr>
             <td>{$row['don_hang_id']}</td>
@@ -42,4 +42,3 @@ while($row = $result->fetch_assoc()) {
 
 $link->close();
 ?>
-    
