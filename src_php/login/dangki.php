@@ -118,8 +118,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     $phone = $_POST['phone']; 
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
 
-    
-    $link = new mysqli("localhost", "root", "", "bmw_chung");
+    // Kết nối với cơ sở dữ liệu
+    $link = new mysqli("localhost", "root", "", "bmw_khachhang");
 
     if ($link->connect_error) {
         die("Kết nối thất bại: " . $link->connect_error);
@@ -141,7 +141,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
         $stmt->bind_param("ssssssss", $username, $password, $name, $email, $date, $gioitinh, $address, $phone);
 
         if ($stmt->execute()) {
-            
             echo "<p style='color: green;'>Đăng ký thành công! Bạn sẽ được chuyển đến trang đăng nhập.</p>";
             header("Location: index.php?pid=6"); 
             exit();
