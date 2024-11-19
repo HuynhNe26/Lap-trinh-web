@@ -1,20 +1,20 @@
 <?php
      
      $host = 'localhost';
-     $db = 'bmw_chung'; 
+     $db = 'bmw_sanpham'; 
      $user = 'root'; 
      $pass = '';
      
-     $conn = new mysqli($host, $user, $pass, $db);
+     $link = new mysqli($host, $user, $pass, $db);
      
-     if ($conn->connect_error) {
-         die("Kết nối thất bại: " . $conn->connect_error);
+     if ($link->connect_error) {
+         die("Kết nối thất bại: " . $link->connect_error);
      }
      
      
      if (isset($_SESSION['successMessage'])) {
          $successMessage = $_SESSION['successMessage'];
-         unset($_SESSION['successMessage']); 
+         unset($_SESSION['successMessage']);
      }
      
      
@@ -40,9 +40,9 @@
          exit();
      }
      
-     
+    
      $sql = "SELECT masp, tensp, mota, dongia, hinhanh FROM sanpham";
-     $result = $conn->query($sql);
+     $result = $link->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -265,5 +265,5 @@
 </html>
 
 <?php
-$conn->close();
+$link->close();
 ?>
