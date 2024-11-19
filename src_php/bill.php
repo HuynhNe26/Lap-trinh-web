@@ -1,27 +1,28 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "bmw_chung");
-if ($conn->connect_error) {
-    die("Kết nối thất bại: " . $conn->connect_error);
+$link = new mysqli("localhost", "root", "", "bmw_giohang");
+if ($link->connect_error) {
+    die("Kết nối thất bại: " . $link->connect_error);
 }
 
 
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id']; 
 
-   
-    $stmt = $conn->prepare("SELECT * FROM don_hang WHERE makhachhang = ?");
+    
+    $stmt = $link->prepare("SELECT * FROM don_hang WHERE makhachhang = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         while ($order = $result->fetch_assoc()) {
-           
-            $stmt = $conn->prepare("SELECT c.*, s.tensp FROM chitietsanpham c JOIN sanpham s ON c.masp = s.masp WHERE c.don_hang_id = ?");
+            
+            $stmt = $link->prepare("SELECT c.*, s.tensp FROM chitietsanpham c JOIN bmw_sanpham.sanpham s ON c.masp = s.masp WHERE c.don_hang_id = ?");
             $stmt->bind_param("i", $order['don_hang_id']);
             $stmt->execute();
             $product_result = $stmt->get_result();
 
+            
             echo "<div class='order-container'>";
             echo "<h1 class='order-title'>Thông tin hóa đơn</h1>";
             echo "<p><strong>Mã đơn hàng:</strong> " . $order['don_hang_id'] . "</p>";
@@ -58,7 +59,7 @@ if (isset($_SESSION['user_id'])) {
             $ngaygiao = $ngaydat->modify('+7 day');
             $ngaygiao_formatted = $ngaygiao->format('d-m-Y');
 
-            
+           
             echo "<p><strong>Ngày giao hàng dự kiến:</strong> " . $ngaygiao_formatted . " vào lúc 9h sáng</p>";
            
             echo "<button class='print-btn' onclick='window.print();'>In hóa đơn</button>";
@@ -73,7 +74,7 @@ if (isset($_SESSION['user_id'])) {
     echo "<p>Vui lòng đăng nhập để xem đơn hàng.</p>";
 }
 
-$conn->close();
+$link->close();
 ?>
 <style>
     body {
@@ -95,15 +96,14 @@ $conn->close();
 .order-title {
     color: #333;
     font-size: 28px; 
-    font-weight: bold;
-    color: #2a8fbd; 
+    color: #2a8fbd;
     text-align: center;
     font-size: 40px;
 }
 
 .product-title {
     color: red;
-    font-size: 27px;
+    font-size: 27px; 
     margin-top: 20px;
     text-align: center;
 }
@@ -115,7 +115,7 @@ p {
 
 .total-amount {
     font-size: 25px;
-    color: #d9534f;
+    color: #d9534f; 
     font-weight: bold;
 }
 
@@ -171,7 +171,7 @@ p {
 
 .order-container {
     text-align: center;
-    padding-right: 40px;
+    padding-right: 40px; 
 }
 
 .print-btn:hover {
@@ -197,8 +197,9 @@ p {
     
 }
 
+
 .order-container {
-    text-align: center; 
+    text-align: center; /
 }
 
 .continue-shopping-btn:hover {
