@@ -7,6 +7,7 @@ CREATE TABLE member_user (
     ngaysinh DATE NOT NULL,
     gioitinh VARCHAR(50),
     diachi VARCHAR(255),
+    sodienthoai VARCHAR(20),
     PRIMARY KEY (makhachhang)
 );
 
