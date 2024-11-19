@@ -2,7 +2,7 @@
 
 
 
-$link = new mysqli("localhost", "root", "", "bmw_chung");
+$link = new mysqli("localhost", "root", "", "bmw_khachhang");
 
 if ($link->connect_error) {
     die("Kết nối thất bại: " . $link->connect_error);
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    
+   
     $sql = "SELECT * FROM member_user WHERE tendangnhap = ?";
     $stmt = $link->prepare($sql);
     $stmt->bind_param("s", $username);
@@ -21,13 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        
+       
         if (password_verify($password, $user['matkhau'])) {
            
             $_SESSION['user_id'] = $user['makhachhang']; 
-            $_SESSION['username'] = $user['hovaten'];
+            $_SESSION['username'] = $user['hovaten']; 
             $_SESSION['email'] = $user['email']; 
-            $_SESSION['address'] = $user['diachi']; 
+            $_SESSION['address'] = $user['diachi'];
             $_SESSION['phone'] = $user['sodienthoai']; 
             $_SESSION['login_success'] = "Đăng nhập thành công"; 
             header("Location: index.php"); 
