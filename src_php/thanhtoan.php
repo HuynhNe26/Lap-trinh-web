@@ -8,14 +8,14 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 
-$conn = new mysqli("localhost", "root", "", "bmw_chung");
+$link_khachhang = new mysqli("localhost", "root", "", "bmw_khachhang");
 
 // Kiểm tra kết nối
-if ($conn->connect_error) {
-    die("Kết nối thất bại: " . $conn->connect_error);
+if ($link_khachhang->connect_error) {
+    die("Kết nối thất bại: " . $link_khachhang->connect_error);
 }
 
-
+// Lấy thông tin khách hàng từ session
 $user_info = [
     'username' => $_SESSION['username'] ?? 'N/A',
     'email' => $_SESSION['email'] ?? 'N/A',
@@ -29,15 +29,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_info'])) {
     $email = $_POST['email'];
     $address = $_POST['address'];
     $phone = $_POST['phone'];
+}
 
+$link_sanpham = new mysqli("localhost", "root", "", "bmw_sanpham");
 
+// Kiểm tra kết nối
+if ($link_sanpham->connect_error) {
+    die("Kết nối thất bại: " . $link_sanpham->connect_error);
 }
 
 
 $product_ids = array_keys($_SESSION['cart']);
 $product_ids_string = implode(',', $product_ids);
 $sql = "SELECT masp, tensp, mota, dongia, hinhanh FROM sanpham WHERE masp IN ($product_ids_string)";
-$result = $conn->query($sql);
+$result = $link_sanpham->query($sql);
 
 $product_details = [];
 $total_price = 0;
