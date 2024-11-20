@@ -18,6 +18,6 @@ if ($stmt->affected_rows > 0) {
     echo "Không thể xóa đơn hàng.";
 }
 
-header("Location: quanlidonhang.php");
+header("Location:../admin.php?pid=1");
 exit();
 ?>
