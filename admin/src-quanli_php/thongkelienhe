@@ -1,1 +1,59 @@
+<?php
+$link = new mysqli("localhost", "root", "", "bmw_chung");
 
+if ($link->connect_error) {
+    die("Kết nối thất bại: " . $link->connect_error);
+}
+
+$query = "SELECT COUNT(*) as count, ngaygiolienhe FROM lienhe WHERE MONTH(ngaygiolienhe) = MONTH(CURDATE()) AND YEAR(ngaygiolienhe) = YEAR(CURDATE()) GROUP BY ngaygiolienhe";
+$result = $link->query($query);
+
+$data = [];
+$labels = [];
+
+while ($row = $result->fetch_assoc()) {
+    $labels[] = $row['ngaygiolienhe'];
+    $data[] = $row['count'];
+}
+
+$link->close();
+?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width:500px; height:800px">
+    <div style="text-align:center">THỐNG KÊ LIÊN HỆ TỪ KHÁCH HÀNG</div>
+        <canvas id="datelh" width="100px" height="50px"></canvas>
+
+        <script>
+            const ctx = document.getElementById('datelh').getContext('2d');
+            const datelh = new Chart(ctx, {
+                type: 'bar', //biểu đồ cột//
+                data: {
+                    labels: <?php echo json_encode($labels); ?>,
+                    datasets: [{
+                        label: 'Số lượng liên hệ ',
+                        data: <?php echo json_encode($data); ?>,
+                        backgroundColor: 'rgba(28, 28, 28, 0.7)', //màu biểu đồ
+                        borderColor: 'rgba(28, 28, 28, 1)', //màu viền biểu đồ
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+
+</body>
+</html>
