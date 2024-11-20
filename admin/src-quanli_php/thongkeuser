@@ -1,1 +1,60 @@
 
+<?php
+$link = new mysqli("localhost", "root", "", "bmw_chung");
+
+if ($link->connect_error) {
+    die("Kết nối thất bại: " . $link->connect_error);
+}
+
+$query = "SELECT COUNT(*) as count, ngaydangki FROM member_user WHERE MONTH(ngaydangki) = MONTH(CURDATE()) AND YEAR(ngaydangki) = YEAR(CURDATE()) GROUP BY ngaydangki";
+$result = $link->query($query);
+
+$data = [];
+$labels = [];
+
+while ($row = $result->fetch_assoc()) {
+    $labels[] = $row['ngaydangki'];
+    $data[] = $row['count'];
+}
+
+$link->close();
+?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width:500px; height:800px">
+    <div style="text-align:center">THỐNG KÊ USER</div>
+        <canvas id="datedk" width="100px" height="50px"></canvas>
+
+        <script>
+            const ctx = document.getElementById('datedk').getContext('2d');
+            const datedk = new Chart(ctx, {
+                type: 'bar', //biểu đồ cột//
+                data: {
+                    labels: <?php echo json_encode($labels); ?>,
+                    datasets: [{
+                        label: 'Số lượng đăng ký',
+                        data: <?php echo json_encode($data); ?>,
+                        backgroundColor: 'rgba(28, 28, 28, 0.7)', //màu biểu đồ
+                        borderColor: 'rgba(28, 28, 28, 1)', //màu viền biểu đồ
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+
+</body>
+</html>
