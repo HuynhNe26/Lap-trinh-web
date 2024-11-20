@@ -27,6 +27,6 @@ if ($stmt->affected_rows > 0) {
 }
 
 // Chuyển hướng quay lại trang trước hoặc trang danh sách đơn hàng
-header("Location: quanlidonhang.php");
+header("Location: ../admin.php?pid=1");
 exit();
 ?>
