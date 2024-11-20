@@ -3,8 +3,8 @@ $link = new mysqli("localhost", "root", "", "bmw_web");
 if ($link->connect_error) {
 die("Connection failed: " . $link->connect_error);
 }
-$hoadon= = "SELECT * FROM don_hang";
-$result = $link->query($sql);
+$hoadon="SELECT * FROM donhang";
+$result = $link->query($hoadon);
 ?>
 <div class="main-content">
     <h1>Quản lý đơn hàng</h1>
@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
                 <th>Tổng Tiền</th>
                 <th>Trạng Thái</th>
                 <th>Hành Động</th>
-            </tr>";
+            </tr>";     
     while($row = $result->fetch_assoc()) {
         echo "
         <tr>
@@ -42,3 +42,4 @@ if ($result->num_rows > 0) {
 
 $link->close();
 ?>
+</div>
